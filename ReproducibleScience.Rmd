@@ -1,0 +1,537 @@
+---
+title: | 
+    | Doing reproducible science: 
+    | from your hard-won data 
+    | to a publishable manuscript 
+    | without going mad
+author: "Francisco Rodriguez-Sanchez"
+date: "http://bit.ly/frod_san"
+output:
+  beamer_presentation:
+    incremental: no
+header-includes:
+  - \def\begincols{\begin{columns}}
+  - \def\endcols{\end{columns}}
+  - \def\begincol{\begin{column}{0.48\textwidth}}
+  - \def\endcol{\end{column}} 
+  - \setlength{\emergencystretch}{0em}
+  - \setlength{\parskip}{0pt}
+fontsize: 10pt
+---
+
+
+```{r knitr_setup, include=FALSE, cache=FALSE}
+
+library(knitr)
+
+### Chunk options ###
+
+## Text results
+opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+
+## Code decoration
+opts_chunk$set(tidy = FALSE, comment = NA, highlight = TRUE)
+
+```
+
+
+
+## A typical research workflow
+
+\begincols[T]
+
+\begincol
+
+1. Prepare data (**EXCEL**)
+
+\endcol
+
+\begincol
+
+![](images/excel.png)
+
+\endcol
+
+\endcols
+
+
+
+## A typical research workflow
+
+\begincols[T]
+
+\begincol
+
+1. Prepare data (**EXCEL**)
+
+2. Analyse data (**R**)
+
+\endcol
+
+\begincol
+
+![](images/rstudio.png)
+
+\endcol
+
+\endcols
+
+
+
+## A typical research workflow
+
+\begincols[T]
+
+\begincol
+
+1. Prepare data (**EXCEL**)
+
+2. Analyse data (**R**)
+
+3. Write report/paper (**WORD**)
+
+\endcol
+
+\begincol
+
+![](images/word.png)
+
+\endcol
+
+\endcols
+
+
+
+
+## This workflow is broken
+
+![](images/workflow.png)
+
+
+
+
+## Problems of a broken workflow {.build}
+
+
+> - How did you do this? What analysis is behind this figure? Did you account for ...?
+
+> - What dataset was used? Which individuals were left out? Where is the clean dataset?
+
+> - Oops, there is an error in the data. Can you repeat the analysis? And update figures/tables in Word!
+
+
+----
+
+Every analysis you do on a dataset will have to be redone 10–15 times before publication. Plan accordingly.
+
+[*Trevor A. Branch*](https://twitter.com/TrevorABranch/status/648987799648014336)
+
+
+
+
+
+# WHAT is Reproducible Science?
+
+
+## Reproducible Science: WHAT {.build}
+
+A scientific article is **reproducible** if there is computer **code** that can **regenerate** all results and figures from the original data.
+
+- Transparent
+
+- Traceable
+
+- Comprehensive
+
+- Useful
+
+
+
+## Most science is not reproducible
+
+![](images/Peng_Science.png)
+
+Even **you** will struggle to reproduce **your own results** from a few weeks/months ago.
+
+
+----
+
+> You can't reproduce if you don't understand where a number came from.  
+You can't reproduce what you don't remember. And trust me: you won't.  
+You can't reproduce what you've lost. What if you need access to a file as it existed 1, 10, 100, or 1000 days ago?  
+
+> *Ben Bond-Lamberty*
+
+
+# WHY Reproducible Science?
+
+
+## Reproducible Science: WHY {.build}
+
+
+> - Fundamental pillar of scientific method
+
+> - Much less prone to errors
+
+> - Automatically regenerate results
+
+> - Code reuse & sharing accelerates scientific progress
+
+> - Increasingly required by journals
+
+> - Higher publication impact (citations, future collaborations, etc)
+
+
+
+
+# HOW TO DO Reproducible Science?
+
+
+## Reproducible Science: HOW
+
+1. File organisation.
+
+2. Data management. Spreadsheet good practices.
+
+3. Code-based data analysis. Rmarkdown
+
+4. Software dependencies.
+
+5. Version control & collaborative writing.
+
+
+
+
+## File organisation 
+
+> - All files in same directory (Rstudio project).
+
+> - Raw data untouched in independent folder.
+
+> - Derived, clean data in another folder.
+
+> - Figures, code, etc also have their own folder.
+
+
+
+## File organisation example
+
+```
+myproject 
+
+|- README       # general info about the project   
+
+|- analysis.R   # master script that executes everything 
+
+|- data-raw/    # original raw data     
+
+|- data/        # clean data (produced w/ script)     
+
+|- R/           # functions definitions    
+
+|- doc/         # manuscript files     
+
+|- figs/        # final figures    
+
+|- output/      # other code output     
+```
+
+
+
+# Data management
+
+
+## Data management
+
+1. Planification (e.g. [DMPTool](https://dmptool.org/))
+
+2. Collection
+
+3. Metadata description (EML, [Morpho](http://knb.ecoinformatics.org/morphoportal.jsp))
+
+4. Quality control
+
+5. Storage
+
+
+
+
+## Storage
+
+Use the cloud: safe, persistent, easy to share
+
+- Dropbox
+
+- OSF
+
+- Figshare, etc
+
+- See all data repositories in www.re3data.org
+
+
+
+
+
+## Spreadsheet good practices
+
+
+> - Put **variables** in **columns** (things you are measuring: height, weight, sex)
+
+> - Each **observation** in one **row** (e.g. individuals).
+
+> - Avoid spaces, numbers, and special characters in column names.
+
+> - Always write zero values, to distinguish from blank/missing data.
+
+> - Use blank/empty cells, or NA, for missing data.
+
+> - Input dates as year, month, day in separate columns. Or YYYY-MM-DD as text.
+
+> - Use 'Data validation' in Excel to constrain data entry to accepted values.
+
+> - Don't combine multiple pieces of information in one cell.
+
+> - Don't touch raw data. Do all data manipulation with R code.
+
+> - Export data as plain text (txt, csv)
+
+
+> - http://www.datacarpentry.org/spreadsheet-ecology-lesson/
+
+> - http://kbroman.org/dataorg/
+
+
+
+# Common spreadsheet errors
+
+
+## More than one variable per column
+
+\begincols
+\begincol
+![](http://www.datacarpentry.org/spreadsheet-ecology-lesson/fig/multiple-info.png)
+\endcol
+
+\begincol
+![](http://www.datacarpentry.org/spreadsheet-ecology-lesson/fig/single-info.png)
+\endcol
+\endcols
+
+Source: Data Carpentry
+
+
+## Multiple tables
+
+![](http://www.datacarpentry.org/spreadsheet-ecology-lesson/fig/2_datasheet_example.jpg)
+
+
+## Multiple tabs
+
+Could you avoid new tab by adding a column to original spreadsheet?
+
+
+## Using formatting, comments, etc to convey information
+
+\begincols
+\begincol
+![](http://www.datacarpentry.org/spreadsheet-ecology-lesson/fig/formatting.png)
+\endcol
+
+\begincol
+![](http://www.datacarpentry.org/spreadsheet-ecology-lesson/fig/good_formatting.png)
+\endcol
+\endcols
+
+
+
+----
+
+Your turn: tidy up this messy dataset 
+
+https://ndownloader.figshare.com/files/2252083
+
+
+
+# Data analysis
+
+## Always use code
+
+- Reproducible
+
+- Reusable
+
+
+
+## Dynamic reports
+
+![](images/integrated_workflow.png)
+
+
+
+
+
+## Rmarkdown documents
+
+* Fully reproducible (trace all results inc. tables and plots)
+
+* Dynamic (regenerate with 1 click)
+
+* Suitable for
+    + documents (Word, PDF, etc)
+    + presentations
+    + books
+    + websites
+    + ...
+
+
+## Let's see Rmarkdown in action
+
+In Rstudio, create new Rmarkdown document and click on `Knit HTML`.
+
+
+## Example: Does sunshine influence happiness?
+
+See [myproject.Rmd](myproject.Rmd)
+
+![](images/myproject.png)
+
+
+## HTML output
+
+![](images/html_output.png)
+
+
+## Spotted error in the data? No problem!
+
+Make changes in Rmarkdown document, click `knit` and report will update automatically!
+
+
+## Other formats: PDF, Word
+
+\begincols
+\begincol
+![](images/pdf_output.png)
+\endcol
+
+\begincol
+![](images/word_output.png)
+\endcol
+\endcols
+
+
+
+
+
+## Adding citations
+
+![](images/citation_Rmd.png)
+
+See [output](myproject_citations.html)
+
+![](images/references.png)
+
+
+
+
+## Can write full thesis in Rmarkdown!
+
+See [thesis.Rmd](thesis.Rmd).
+
+See [thesis.pdf](thesis.pdf).
+
+
+
+----
+
+Your turn: 
+
+- Download http://bit.ly/DEAD_datasets
+
+- With dataset trees.txt, analyse relationship between DBH and height.
+
+
+
+## Steps
+
+- Create Rstudio project (in Dropbox folder)
+
+- Create folder structure
+
+- Save original data in data-raw folder.
+
+- Set up OSF
+
+- Data quality control in R
+
+- Write report in rmarkdown.
+
+
+
+# Managing software dependencies
+
+## Managing package dependencies in R
+
+- sessionInfo (or session_info)
+
+- switchr
+
+- rctrack
+
+- checkpoint
+
+- packrat
+
+- docker
+
+
+
+
+
+
+# Version control
+
+## Dropbox
+
+Dropbox keeps record of deleted/edited files for 30 days
+
+
+## Open Science Framework
+
+Automatic version control, no time limit.
+
+![](images/versioncontrol_OSF.png)
+
+
+## Git & GitHub
+
+![](images/git_versioning.png)
+
+R. Fitzjohn (https://github.com/richfitz/reproducibility-2014)
+
+
+
+
+
+
+# Collaborative writing
+
+## Many alternatives
+
+- Rmarkdown + GitHub
+
+- Word + Dropbox
+
+- Google Docs
+
+- Overleaf
+
+- Authorea
+
+- ...
+
+
+----
+
+Happy writing!
+
+
