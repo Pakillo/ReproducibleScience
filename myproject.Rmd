@@ -1,7 +1,7 @@
 ---
 title: "Does sunshine make people happy?"
 author: "F. Rodriguez-Sanchez"
-date: "Monday, March 23, 2015"
+date: "Thursday, 17 November 2016"
 output: word_document
 ---
 
@@ -18,7 +18,7 @@ Methods
 ```{r echo=FALSE} 
 ## Read data
 data <- read.table("data.txt", header=T)
-data[10,1] <- 11   # correct error
+#data[10,1] <- 11   # correct error
 
 # Fit linear model
 model <- lm(happiness ~ sunshine, data=data)

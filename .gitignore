@@ -2,3 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
+thesis.Rmd
+thesis.pdf
+knitr_output

@@ -54,11 +54,9 @@ knit_hooks$set(smallfont = function(before, options, envir) {
 ```
 
 
-
 ## A typical research workflow
 
-\begincols[T]
-
+\begincols
 \begincol
 
 1. Prepare data (**EXCEL**)
@@ -70,15 +68,13 @@ knit_hooks$set(smallfont = function(before, options, envir) {
 ![](images/excel.png)
 
 \endcol
-
 \endcols
 
 
 
 ## A typical research workflow
 
-\begincols[T]
-
+\begincols
 \begincol
 
 1. Prepare data (**EXCEL**)
@@ -92,15 +88,13 @@ knit_hooks$set(smallfont = function(before, options, envir) {
 ![](images/rstudio.png)
 
 \endcol
-
 \endcols
 
 
 
 ## A typical research workflow
 
-\begincols[T]
-
+\begincols
 \begincol
 
 1. Prepare data (**EXCEL**)
@@ -110,14 +104,29 @@ knit_hooks$set(smallfont = function(before, options, envir) {
 3. Write report/paper (**WORD**)
 
 \endcol
-
 \begincol
 
 ![](images/word.png)
 
 \endcol
-
 \endcols
+
+
+## A typical research workflow
+
+1. Prepare data (**EXCEL**)
+
+2. Analyse data (**R**)
+
+3. Write report/paper (**WORD**)
+
+4. Start the email attachments nightmare...
+
+
+
+## Our everyday scary movie
+
+https://youtu.be/s3JldKoA0zw
 
 
 
@@ -129,7 +138,7 @@ knit_hooks$set(smallfont = function(before, options, envir) {
 
 
 
-## Problems of a broken workflow {.build}
+## Problems of a broken workflow
 
 
 > - How did you do this? What analysis is behind this figure? Did you account for ...?
@@ -141,9 +150,9 @@ knit_hooks$set(smallfont = function(before, options, envir) {
 
 ----
 
-Every analysis you do on a dataset will have to be redone 10–15 times before publication. Plan accordingly.
-
-[*Trevor A. Branch*](https://twitter.com/TrevorABranch/status/648987799648014336)
+```{r out.height='3in', out.width='4in'}
+include_graphics("images/trevor_tweet.png")
+```
 
 
 
@@ -175,11 +184,15 @@ Even **you** will struggle to reproduce **your own results** from a few weeks/mo
 
 ----
 
+\scriptsize 
+
 > You can't reproduce if you don't understand where a number came from.  
 You can't reproduce what you don't remember. And trust me: you won't.  
 You can't reproduce what you've lost. What if you need access to a file as it existed 1, 10, 100, or 1000 days ago?  
 
 > *Ben Bond-Lamberty*
+
+\normalsize
 
 
 # WHY Reproducible Science?
@@ -401,6 +414,11 @@ https://ndownloader.figshare.com/files/2252083
     + books
     + websites
     + ...
+    
+```{r out.height='2in', out.width='2in'}
+include_graphics("images/rmarkdown.png")
+```
+
 
 
 ## Let's see Rmarkdown in action
@@ -460,30 +478,6 @@ See [thesis.pdf](thesis.pdf).
 
 
 
-----
-
-Your turn: 
-
-- Download http://bit.ly/DEAD_datasets
-
-- With dataset trees.txt, analyse relationship between DBH and height.
-
-
-
-## Steps
-
-- Create Rstudio project (in Dropbox folder)
-
-- Create folder structure
-
-- Save original data in data-raw folder.
-
-- Set up OSF
-
-- Data quality control in R
-
-- Write report in rmarkdown.
-
 
 
 # Managing software dependencies
@@ -509,6 +503,10 @@ Your turn:
 
 # Version control
 
+----
+
+![](images/version_control_PhD.gif)
+
 ## Dropbox
 
 Dropbox keeps record of deleted/edited files for 30 days
@@ -529,6 +527,21 @@ R. Fitzjohn (https://github.com/richfitz/reproducibility-2014)
 
 
 
+## Git & GitHub
+
+- [Sign up](https://github.com/join) for GitHub
+
+- [Install Git](http://happygitwithr.com/install-git.html)
+
+- [Introduce yourself](http://happygitwithr.com/hello-git.html)
+
+- Create repo on GitHub
+
+- Clone repo in Rstudio
+
+- Make changes, push, pull
+
+- Collaboration
 
 
 
