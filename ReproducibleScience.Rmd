@@ -124,13 +124,6 @@ knit_hooks$set(smallfont = function(before, options, envir) {
 
 
 
-## Our everyday scary movie
-
-https://youtu.be/s3JldKoA0zw
-
-
-
-
 ## This workflow is broken
 
 ![](images/workflow.png)
@@ -156,12 +149,17 @@ include_graphics("images/trevor_tweet.png")
 
 
 
+## Our everyday scary movie
+
+https://youtu.be/s3JldKoA0zw
+
+
 
 
 # WHAT is Reproducible Science?
 
 
-## Reproducible Science: WHAT {.build}
+## Reproducible Science: WHAT 
 
 A scientific article is **reproducible** if there is computer **code** that can **regenerate** all results and figures from the original data.
 
@@ -198,7 +196,7 @@ You can't reproduce what you've lost. What if you need access to a file as it ex
 # WHY Reproducible Science?
 
 
-## Reproducible Science: WHY {.build}
+## Reproducible Science: WHY 
 
 
 > - Fundamental pillar of scientific method
