@@ -585,8 +585,11 @@ R. Fitzjohn (https://github.com/richfitz/reproducibility-2014)
 - ...
 
 
-----
 
-Happy writing!
+## Happy writing!
+
+![](images/CC-BY-NC-SA_logo.png)
+
+Slides and source code available at https://github.com/Pakillo/ReproducibleScience
 
 
