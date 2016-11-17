@@ -175,7 +175,10 @@ A scientific article is **reproducible** if there is computer **code** that can 
 
 ## Most science is not reproducible
 
-![](images/Peng_Science.png)
+```{r out.width='4in', out.height='3in'}
+include_graphics("images/Reproducibility_gradient.png")
+```
+
 
 Even **you** will struggle to reproduce **your own results** from a few weeks/months ago.
 
@@ -467,6 +470,13 @@ See [output](myproject_citations.html)
 
 
 
+## Useful: rcrossref addin
+
+```{r out.width='4in', out.height='3in'}
+include_graphics("images/rcrossref.jpg")
+```
+
+
 
 ## Can write full thesis in Rmarkdown!
 
@@ -475,8 +485,23 @@ See [thesis.Rmd](thesis.Rmd).
 See [thesis.pdf](thesis.pdf).
 
 
+## Rmarkdown cheat sheet
+
+```{r out.width='4in', out.height='3in'}
+include_graphics("images/rmarkdown-cheatsheet.png")
+```
+
+https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf
 
 
+
+## Rmarkdown reference guide
+
+```{r out.width='4in', out.height='3in'}
+include_graphics("images/rmarkdown-reference.png")
+```
+
+https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
 
 # Managing software dependencies
 
