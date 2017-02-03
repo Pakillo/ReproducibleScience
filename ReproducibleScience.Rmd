@@ -5,8 +5,8 @@ title: |
     | to a publishable manuscript 
     | without going mad
 author: "Francisco Rodriguez-Sanchez (@frod_san)"
-date: "November 2016"
-fontsize: 9pt
+date: "February 2017"
+fontsize: 11pt
 output:
   beamer_presentation: 
     df_print: kable
@@ -112,7 +112,11 @@ knit_hooks$set(smallfont = function(before, options, envir) {
 \endcols
 
 
+
 ## A typical research workflow
+
+\begincols
+\begincol
 
 1. Prepare data (**EXCEL**)
 
@@ -120,8 +124,17 @@ knit_hooks$set(smallfont = function(before, options, envir) {
 
 3. Write report/paper (**WORD**)
 
-4. Start the email attachments nightmare...
+4. Start the email attachments **nightmare**...
 
+\endcol
+\begincol
+
+```{r out.height='3in', out.width='2in'}
+include_graphics("images/emailmeme.jpg")
+```
+
+\endcol
+\endcols
 
 
 ## This workflow is broken
@@ -185,7 +198,7 @@ Even **you** will struggle to reproduce **your own results** from a few weeks/mo
 
 ----
 
-\scriptsize 
+
 
 > You can't reproduce if you don't understand where a number came from.  
 You can't reproduce what you don't remember. And trust me: you won't.  
@@ -193,26 +206,46 @@ You can't reproduce what you've lost. What if you need access to a file as it ex
 
 > *Ben Bond-Lamberty*
 
-\normalsize
+
 
 
 # WHY Reproducible Science?
 
 
+
+----
+
+```{r}
+include_graphics("images/xkcd_repro.jpg")
+```
+
+\scriptsize
+Carole Goble http://www.slideshare.net/carolegoble/ismb2013-keynotecleangoble
+\normalsize
+
+
+----
+
+```{r}
+include_graphics("images/noamross_tweet.jpg")
+```
+
+
+
 ## Reproducible Science: WHY 
 
 
-> - Fundamental pillar of scientific method
+> - Fundamental pillar of **scientific method**
 
-> - Much less prone to errors
+> - Much less prone to **errors**
 
-> - Automatically regenerate results
+> - Regenerate results **automatically**
 
-> - Code reuse & sharing accelerates scientific progress
+> - **Code reuse** & sharing accelerates scientific progress
 
-> - Increasingly required by journals
+> - Increasingly required by **journals**
 
-> - Higher publication impact (citations, future collaborations, etc)
+> - Higher publication **impact** (citations, future collaborations, etc)
 
 
 
@@ -222,28 +255,29 @@ You can't reproduce what you've lost. What if you need access to a file as it ex
 
 ## Reproducible Science: HOW
 
-1. File organisation.
+1. File **organisation**.
 
-2. Data management. Spreadsheet good practices.
+2. **Data management**. Spreadsheet good practices.
 
-3. Code-based data analysis. Rmarkdown
+3. **Code-based** data analysis. **Rmarkdown**
 
-4. Software dependencies.
+4. Software **dependencies**.
 
-5. Version control & collaborative writing.
+5. **Version control** & collaborative writing.
 
 
 
 
 ## File organisation 
 
-> - All files in same directory (Rstudio project).
+> - All files in **same directory** (Rstudio project).
 
-> - Raw data untouched in independent folder.
+> - **Raw data untouched** in independent folder.
 
-> - Derived, clean data in another folder.
+> - Derived, **clean data** in another folder.
 
 > - Figures, code, etc also have their own folder.
+
 
 
 
@@ -273,7 +307,7 @@ myproject
 
 # Data management
 
-
+```{r eval=FALSE}
 ## Data management
 
 1. Planification (e.g. [DMPTool](https://dmptool.org/))
@@ -285,13 +319,25 @@ myproject
 4. Quality control
 
 5. Storage
+```
 
+
+
+----
+
+```{r}
+include_graphics("images/stolendata.png")
+```
+
+\scriptsize
+http://science.sciencemag.org/content/354/6317/1242.1
+\normalsize
 
 
 
 ## Storage
 
-Use the cloud: safe, persistent, easy to share
+Use the **cloud**: safe, persistent, easy to share
 
 - Dropbox
 
@@ -302,11 +348,26 @@ Use the cloud: safe, persistent, easy to share
 - See all data repositories in www.re3data.org
 
 
+## Tidy data
+
+```{r out.height='2.5in', out.width='4in'}
+include_graphics("images/tidydata.png")
+```
+
+
+```{r out.height='2.5in', out.width='4in'}
+include_graphics("images/gatherdata.png")
+```
+
+\scriptsize
+http://r4ds.had.co.nz/tidy.html
+\normalsize
 
 
 
 ## Spreadsheet good practices
 
+\scriptsize
 
 > - Put **variables** in **columns** (things you are measuring: height, weight, sex)
 
@@ -333,8 +394,9 @@ Use the cloud: safe, persistent, easy to share
 
 > - http://kbroman.org/dataorg/
 
+\normalsize
 
-
+```{r eval=FALSE}
 # Common spreadsheet errors
 
 
@@ -385,6 +447,9 @@ https://ndownloader.figshare.com/files/2252083
 
 
 
+```
+
+
 # Data analysis
 
 ## Always use code
@@ -429,19 +494,19 @@ In Rstudio, create new Rmarkdown document and click on `Knit HTML`.
 
 ## Example: Does sunshine influence happiness?
 
-See [myproject.Rmd](myproject.Rmd)
+See [myproject.Rmd](myproject.Rmd) (http://bit.ly/rmdsun)
 
 ![](images/myproject.png)
 
 
-## HTML output
+## HTML output includes text, plot and formatted table
 
 ![](images/html_output.png)
 
 
 ## Spotted error in the data? No problem!
 
-Make changes in Rmarkdown document, click `knit` and report will update automatically!
+Make changes in Rmarkdown document, click `knit` and report will **update automatically!**
 
 
 ## Other formats: PDF, Word
@@ -459,7 +524,7 @@ Make changes in Rmarkdown document, click `knit` and report will update automati
 
 
 
-
+```{r eval=FALSE}
 ## Adding citations
 
 ![](images/citation_Rmd.png)
@@ -469,12 +534,34 @@ See [output](myproject_citations.html)
 ![](images/references.png)
 
 
+```
 
-## Useful: rcrossref addin
+
+## Adding citations by DOI
+
+rcrossref addin
 
 ```{r out.width='4in', out.height='3in'}
 include_graphics("images/rcrossref.jpg")
 ```
+
+
+## Adding citations from BibTeX file
+
+citr addin
+
+```{r out.width='4in', out.height='3in', eval=FALSE}
+include_graphics("images/citr.gif")
+```
+
+https://github.com/crsh/citr/
+
+
+## Manuscript templates
+
+- [rticles](https://github.com/rstudio/rticles)
+
+- [rmdTemplates](https://github.com/Pakillo/rmdTemplates)
 
 
 
@@ -483,6 +570,16 @@ include_graphics("images/rcrossref.jpg")
 See [thesis.Rmd](thesis.Rmd).
 
 See [thesis.pdf](thesis.pdf).
+
+
+## Rmarkdown website
+
+http://rmarkdown.rstudio.com/index.html
+
+```{r}
+include_graphics("images/rmdrstudio.PNG")
+```
+
 
 
 ## Rmarkdown cheat sheet
@@ -503,19 +600,21 @@ include_graphics("images/rmarkdown-reference.png")
 
 https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
 
+
+
 # Managing software dependencies
 
 ## Managing package dependencies in R
 
-- sessionInfo (or session_info)
+- **sessionInfo** (or session_info)
 
 - switchr
 
 - rctrack
 
-- checkpoint
+- **checkpoint**
 
-- packrat
+- **packrat**
 
 - docker
 
@@ -549,7 +648,7 @@ Automatic version control, no time limit.
 R. Fitzjohn (https://github.com/richfitz/reproducibility-2014)
 
 
-
+```{r eval=FALSE}
 ## Git & GitHub
 
 - [Sign up](https://github.com/join) for GitHub
@@ -585,6 +684,19 @@ R. Fitzjohn (https://github.com/richfitz/reproducibility-2014)
 - ...
 
 
+
+```
+
+
+## To read more
+
+```{r out.height='4in', out.width='4.5in'}
+include_graphics("images/reproms.png")
+```
+
+\scriptsize
+http://www.revistaecosistemas.net/index.php/ecosistemas/article/viewFile/1178/973
+\normalsize
 
 ## Happy writing!
 
