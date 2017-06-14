@@ -4,8 +4,8 @@ title: |
     | from your hard-won data 
     | to a publishable manuscript 
     | without going mad
-author: "Francisco Rodriguez-Sanchez (@frod_san)"
-date: "February 2017"
+author: "Francisco Rodriguez-Sanchez"
+date: "@frod_san"
 fontsize: 11pt
 output:
   beamer_presentation: 
@@ -314,9 +314,9 @@ myproject
 
 2. Collection
 
-3. Metadata description (EML, [Morpho](http://knb.ecoinformatics.org/morphoportal.jsp))
+3. Metadata description (EML, [Morpho](http://knb.ecoinformatics.org/morphoportal.jsp), [Data Packages](http://frictionlessdata.io/))
 
-4. Quality control
+4. Quality control (e.g. [assertr](https://github.com/tonyfischetti/assertr), [validate](https://github.com/data-cleaning/validate))
 
 5. Storage
 ```
@@ -346,6 +346,7 @@ Use the **cloud**: safe, persistent, easy to share
 - Figshare, etc
 
 - See all data repositories in www.re3data.org
+
 
 
 ## Tidy data
@@ -396,7 +397,7 @@ http://r4ds.had.co.nz/tidy.html
 
 \normalsize
 
-```{r eval=FALSE}
+
 # Common spreadsheet errors
 
 
@@ -446,8 +447,6 @@ Your turn: tidy up this messy dataset
 https://ndownloader.figshare.com/files/2252083
 
 
-
-```
 
 
 # Data analysis
@@ -608,15 +607,15 @@ https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
 
 - **sessionInfo** (or session_info)
 
-- switchr
-
-- rctrack
-
 - **checkpoint**
 
 - **packrat**
 
 - docker
+
+- switchr
+
+- rctrack
 
 
 
@@ -628,6 +627,26 @@ https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
 ----
 
 ![](images/version_control_PhD.gif)
+
+
+----
+
+![](images/filescomic.gif)
+
+
+----
+
+\begincols
+\begincol
+![](images/dataNovc.jpg)
+\endcol
+
+\begincol
+![](images/datavc.jpg)
+\endcol
+\endcols
+
+
 
 ## Dropbox
 
@@ -648,7 +667,7 @@ Automatic version control, no time limit.
 R. Fitzjohn (https://github.com/richfitz/reproducibility-2014)
 
 
-```{r eval=FALSE}
+
 ## Git & GitHub
 
 - [Sign up](https://github.com/join) for GitHub
@@ -685,7 +704,6 @@ R. Fitzjohn (https://github.com/richfitz/reproducibility-2014)
 
 
 
-```
 
 
 ## To read more
@@ -697,6 +715,8 @@ include_graphics("images/reproms.png")
 \scriptsize
 http://www.revistaecosistemas.net/index.php/ecosistemas/article/viewFile/1178/973
 \normalsize
+
+
 
 ## Happy writing!
 
