@@ -6,14 +6,12 @@ output: word_document
 ---
 
 
-Introduction
-------------
+## Introduction
 
 It is well known that individual well-being can be influenced by climatic conditions. However, ...
 
 
-Methods
--------
+## Methods
 
 ```{r echo=FALSE} 
 ## Read data
@@ -29,8 +27,7 @@ We collected data on `r nrow(data)` individuals and fitted a linear model.
 
 
 
-Results
--------
+## Results
 
 We found that...
 
@@ -47,14 +44,12 @@ library(visreg, quietly=T)
 visreg(model)
 ```
 
-Discussion
-----------
+## Discussion
 
 These results confirm that sunshine is good for happiness (slope = `r coef(model)[2]`).
 
 
-Acknowledgements
-----------------
+## Acknowledgements
 
 Y. Xie, J. MacFarlane, Rstudio...
 
