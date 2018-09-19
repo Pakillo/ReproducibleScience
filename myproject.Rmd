@@ -1,7 +1,7 @@
 ---
 title: "Does sunshine make people happy?"
 author: "F. Rodriguez-Sanchez"
-date: "Thursday, 17 November 2016"
+date: "20 January 2020"
 output: word_document
 ---
 
@@ -15,7 +15,7 @@ It is well known that individual well-being can be influenced by climatic condit
 
 ```{r echo=FALSE} 
 ## Read data
-data <- read.table("data.txt", header=T)
+data <- read.table("data.txt", header = TRUE)
 #data[10,1] <- 11   # correct error
 
 # Fit linear model
@@ -33,15 +33,13 @@ We found that...
 
 ```{r echo=FALSE, results='asis'}
 # Print results
-library(xtable, quietly=T)
-library(knitr)
-kable(xtable(model)) 
+library(xtable, quietly = TRUE)
+knitr::kable(xtable(model)) 
 ```
 
 ```{r echo=FALSE}
 # Plot
-library(visreg, quietly=T)
-visreg(model)
+visreg::visreg(model)
 ```
 
 ## Discussion

@@ -1,6 +1,6 @@
 ---
 title: | 
-    | Doing reproducible science: 
+    | Doing reproducible science:
     | from your hard-won data 
     | to a publishable manuscript 
     | without going mad
@@ -11,10 +11,11 @@ output:
   beamer_presentation: 
     df_print: kable
     fig_caption: no
-    fig_height: 5
-    fig_width: 6
+    fig_height: 4
+    fig_width: 5
     includes:
       in_header: header.tex
+    keep_tex: no
     latex_engine: pdflatex
     slide_level: 2
     theme: metropolis
@@ -164,6 +165,10 @@ include_graphics("images/trevor_tweet.png")
 
 ## Our everyday scary movie
 
+```{r out.height='3in', out.width='4in'}
+include_graphics("images/horrormovie.PNG")
+```
+
 https://youtu.be/s3JldKoA0zw
 
 
@@ -198,11 +203,13 @@ Even **you** will struggle to reproduce **your own results** from a few weeks/mo
 
 ----
 
-
+\scriptsize
 
 > You can't reproduce if you don't understand where a number came from.  
 You can't reproduce what you don't remember. And trust me: you won't.  
 You can't reproduce what you've lost. What if you need access to a file as it existed 1, 10, 100, or 1000 days ago?  
+
+\normalsize
 
 > *Ben Bond-Lamberty*
 
@@ -284,8 +291,6 @@ include_graphics("images/noamross_tweet.jpg")
 ## File organisation example
 
 ```
-myproject 
-
 |- README       # general info about the project   
 
 |- analysis.R   # master script that executes everything 
@@ -307,23 +312,26 @@ myproject
 
 # Data management
 
-```{r eval=FALSE}
 ## Data management
 
-1. Planification (e.g. [DMPTool](https://dmptool.org/))
+See https://www.dataone.org/best-practices
+
+.
+
+1. [Planification](https://doi.org/10.1371/journal.pcbi.1004525) (e.g. [DMPTool](https://dmptool.org/))
 
 2. Collection
 
-3. Metadata description (EML, [Morpho](http://knb.ecoinformatics.org/morphoportal.jsp), [Data Packages](http://frictionlessdata.io/))
+3. Metadata [description](https://www.dataone.org/best-practices/describe) (EML, [Morpho](http://knb.ecoinformatics.org/morphoportal.jsp), [Data Packages](http://frictionlessdata.io/), [DataPackageR](https://github.com/ropensci/DataPackageR))
 
-4. Quality control (e.g. [assertr](https://github.com/tonyfischetti/assertr), [validate](https://github.com/data-cleaning/validate))
+4. Quality control (e.g. [assertr](https://github.com/ropensci/assertr), [validate](https://github.com/data-cleaning/validate),
+[pointblank](https://github.com/rich-iannone/pointblank))
 
-5. Storage
-```
+5. [Storage](https://doi.org/10.1371/journal.pcbi.1005097)
 
 
 
-----
+## Storage
 
 ```{r}
 include_graphics("images/stolendata.png")
@@ -339,11 +347,13 @@ http://science.sciencemag.org/content/354/6317/1242.1
 
 Use the **cloud**: safe, persistent, easy to share
 
+- [Open Science Framework](https://osf.io/)
+
+- GitHub
+
 - Dropbox
 
-- OSF
-
-- Figshare, etc
+- Figshare, Zenodo, etc
 
 - See all data repositories in www.re3data.org
 
@@ -366,6 +376,13 @@ http://r4ds.had.co.nz/tidy.html
 
 
 
+## Very careful with data entry and management in Excel!
+
+```{r out.height='3.5in', out.width='4in'}
+include_graphics("images/excel-genes.png")
+```
+
+
 ## Spreadsheet good practices
 
 \scriptsize
@@ -374,26 +391,28 @@ http://r4ds.had.co.nz/tidy.html
 
 > - Each **observation** in one **row** (e.g. individuals).
 
-> - Avoid spaces, numbers, and special characters in column names.
+> - **Avoid** spaces, numbers, and **special characters** in column names.
 
-> - Always write zero values, to distinguish from blank/missing data.
+> - Always **write zero values**, to distinguish from blank/missing data.
 
 > - Use blank/empty cells, or NA, for missing data.
 
-> - Input dates as year, month, day in separate columns. Or YYYY-MM-DD as text.
+> - Input dates as **year, month, day** in separate columns. Or **YYYY-MM-DD** as text.
 
-> - Use 'Data validation' in Excel to constrain data entry to accepted values.
+> - Use **[Data validation](http://bit.ly/excel_dataval)** in Excel (or GForms) to constrain data entry to accepted values.
 
 > - Don't combine multiple pieces of information in one cell.
 
-> - Don't touch raw data. Do all data manipulation with R code.
+> - **Don't touch raw data**. Do all data manipulation through code.
 
-> - Export data as plain text (txt, csv)
+> - Export data as plain text (txt, csv).
 
 
 > - http://www.datacarpentry.org/spreadsheet-ecology-lesson/
 
 > - http://kbroman.org/dataorg/
+
+> - Broman & Woo: [Data organization in spreadsheets](https://doi.org/10.1080/00031305.2017.1375989)
 
 \normalsize
 
@@ -405,11 +424,18 @@ http://r4ds.had.co.nz/tidy.html
 
 \begincols
 \begincol
-![](http://www.datacarpentry.org/spreadsheet-ecology-lesson/fig/multiple-info.png)
+```{r out.width='2in'}
+include_graphics("images/DC-multiple-info.png")
+```
+
+
 \endcol
 
 \begincol
-![](http://www.datacarpentry.org/spreadsheet-ecology-lesson/fig/single-info.png)
+```{r out.width='2in'}
+include_graphics("images/DC-single-info.png")
+```
+
 \endcol
 \endcols
 
@@ -418,7 +444,9 @@ Source: Data Carpentry
 
 ## Multiple tables
 
-![](http://www.datacarpentry.org/spreadsheet-ecology-lesson/fig/2_datasheet_example.jpg)
+```{r out.width='4in'}
+include_graphics("images/DC_datasheet_example.jpg")
+```
 
 
 ## Multiple tabs
@@ -430,11 +458,17 @@ Could you avoid new tab by adding a column to original spreadsheet?
 
 \begincols
 \begincol
-![](http://www.datacarpentry.org/spreadsheet-ecology-lesson/fig/formatting.png)
+```{r out.width='2in'}
+include_graphics("images/DC-formatting.png")
+```
+
 \endcol
 
 \begincol
-![](http://www.datacarpentry.org/spreadsheet-ecology-lesson/fig/good_formatting.png)
+```{r out.width='2in'}
+include_graphics("images/DC_good_formatting.png")
+```
+
 \endcol
 \endcols
 
@@ -458,6 +492,15 @@ https://ndownloader.figshare.com/files/2252083
 - Reusable
 
 
+## Stuck with error / Found bug? Use `reprex`
+
+```{r}
+include_graphics("images/reprex.PNG")
+```
+
+https://reprex.tidyverse.org/
+
+
 
 ## Dynamic reports
 
@@ -474,8 +517,8 @@ https://ndownloader.figshare.com/files/2252083
 * Dynamic (regenerate with 1 click)
 
 * Suitable for
-    + documents (Word, PDF, etc)
-    + presentations
+    + documents (HTML, Word, PDF)
+    + presentations (HTML, PDF, PowerPoint)
     + books
     + websites
     + ...
@@ -508,7 +551,15 @@ See [myproject.Rmd](myproject.Rmd) (http://bit.ly/rmdsun)
 Make changes in Rmarkdown document, click `knit` and report will **update automatically!**
 
 
-## Other formats: PDF, Word
+## Why Rmarkdown?
+
+```{r out.height='2.5in', out.width='4in'}
+include_graphics("images/why-rmarkdown.png")
+```
+
+https://community.rstudio.com/t/convince-me-to-start-using-r-markdown/1636/12
+
+## Other formats: PDF, Word, PowerPoint...
 
 \begincols
 \begincol
@@ -536,32 +587,54 @@ See [output](myproject_citations.html)
 ```
 
 
-## Adding citations by DOI
-
-rcrossref addin
+## Adding citations by DOI: rcrossref
 
 ```{r out.width='4in', out.height='3in'}
 include_graphics("images/rcrossref.jpg")
 ```
 
 
-## Adding citations from BibTeX file
+## Adding citations from BibTeX file: citr
 
-citr addin
-
-```{r out.width='4in', out.height='3in', eval=FALSE}
-include_graphics("images/citr.gif")
+```{r out.width='4in', out.height='2.5in'}
+include_graphics("images/citr.PNG")
 ```
 
 https://github.com/crsh/citr/
 
 
+## Revise writing style: gramr
+
+```{r out.width='4in', out.height='2.5in'}
+include_graphics("images/gramr.PNG")
+```
+
+https://github.com/ropenscilabs/gramr
+
+
 ## Manuscript templates
 
-- [rticles](https://github.com/rstudio/rticles)
+- [rticles](https://github.com/rstudio/rticles): Elsevier, Springer, PeerJ, PNAS, PLoS...
 
 - [rmdTemplates](https://github.com/Pakillo/rmdTemplates)
 
+- Check out GitHub for Rmarkdown templates...
+
+
+## Write your next PNAS/PLoS/PeerJ/whatever in Rmarkdown!
+
+```{r}
+include_graphics("images/pnas.png")
+```
+
+
+## Some real examples 
+
+```{r}
+include_graphics("images/almoraima.PNG")
+```
+
+https://github.com/Pakillo/exclosures-Almoraima/
 
 
 ## Can write full thesis in Rmarkdown!
@@ -571,11 +644,22 @@ See [thesis.Rmd](thesis.Rmd).
 See [thesis.pdf](thesis.pdf).
 
 
+## Bookdown
+
+```{r out.width='4in', out.height='2.5in'}
+include_graphics("images/bookdown.PNG")
+```
+
+
+
+https://bookdown.org/
+
+
 ## Rmarkdown website
 
 http://rmarkdown.rstudio.com/index.html
 
-```{r}
+```{r out.width='4in', out.height='3in'}
 include_graphics("images/rmdrstudio.PNG")
 ```
 
@@ -583,22 +667,30 @@ include_graphics("images/rmdrstudio.PNG")
 
 ## Rmarkdown cheat sheet
 
-```{r out.width='4in', out.height='3in'}
+```{r out.width='4in', out.height='2.5in'}
 include_graphics("images/rmarkdown-cheatsheet.png")
 ```
 
-https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf
+https://www.rstudio.org/links/r_markdown_cheat_sheet
 
 
 
 ## Rmarkdown reference guide
 
-```{r out.width='4in', out.height='3in'}
+```{r out.width='4in', out.height='2.5in'}
 include_graphics("images/rmarkdown-reference.png")
 ```
 
-https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
+https://www.rstudio.org/links/r_markdown_reference_guide
 
+
+## Rmarkdown book
+
+```{r out.width='4in', out.height='2.5in'}
+include_graphics("images/rmarkdown-book.PNG")
+```
+
+https://bookdown.org/yihui/rmarkdown/
 
 
 # Managing software dependencies
@@ -609,13 +701,11 @@ https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
 
 - **checkpoint**
 
-- **packrat**
-
-- docker
+- packrat
 
 - switchr
 
-- rctrack
+- docker
 
 
 
@@ -626,12 +716,12 @@ https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
 
 ----
 
-![](images/version_control_PhD.gif)
+![](images/version_control_PhD.png)
 
 
 ----
 
-![](images/filescomic.gif)
+![](images/filescomic.png)
 
 
 ----
@@ -714,6 +804,17 @@ include_graphics("images/reproms.png")
 
 \scriptsize
 http://www.revistaecosistemas.net/index.php/ecosistemas/article/viewFile/1178/973
+\normalsize
+
+
+## To read more
+
+```{r out.height='2.5in', out.width='4in'}
+include_graphics("images/bes-guide.png")
+```
+
+\scriptsize
+https://www.britishecologicalsociety.org/publications/guides-to/
 \normalsize
 
 
