@@ -1,0 +1,39 @@
+---
+title: "Parameterised report"
+author: "FRS"
+date: "4 February 2020"
+output: html_document
+params:
+  data: coords.csv
+  sp: Sp
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+coords <- read.csv("coords.csv")
+```
+
+```{r}
+library(DT)
+library(leaflet)
+```
+
+## Occurrences: Table
+
+```{r}
+sp1 <- subset(coords, sp == params$sp)
+datatable(sp1)
+```
+
+
+## Occurrences: Map
+
+```{r}
+leaflet(sp1) %>%
+  addTiles() %>%
+  addMarkers(lng = ~lon, lat = ~lat)
+```
+
