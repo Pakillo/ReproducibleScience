@@ -3,6 +3,8 @@ title: "Does sunshine make people happy?"
 author: "F. Rodriguez-Sanchez"
 date: "20 January 2020"
 output: word_document
+csl: ecology-letters.csl
+bibliography: references.bib
 ---
 
 
@@ -12,14 +14,15 @@ It is well known that individual well-being can be influenced by climatic condit
 
 
 ## Methods
+``
 
 ```{r echo=FALSE} 
 ## Read data
 data <- read.table("data.txt", header = TRUE)
-#data[10,1] <- 11   # correct error
+# correct error
 
 # Fit linear model
-model <- lm(happiness ~ sunshine, data=data)
+model <- lm(happiness ~ sunshine, data = data)
 
 ```
 
@@ -31,7 +34,7 @@ We collected data on `r nrow(data)` individuals and fitted a linear model.
 
 We found that...
 
-```{r echo=FALSE, results='asis'}
+```{r echo=FALSE}
 # Print results
 library(xtable, quietly = TRUE)
 knitr::kable(xtable(model)) 
@@ -52,7 +55,8 @@ These results confirm that sunshine is good for happiness (slope = `r coef(model
 Y. Xie, J. MacFarlane, Rstudio...
 
 
-```{r}
+```{r echo=FALSE, eval=FALSE}
 sessionInfo()
 ```
 
+## Cited references
