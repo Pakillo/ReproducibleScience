@@ -594,13 +594,24 @@ include_graphics("images/rcrossref.jpg")
 ```
 
 
-## Adding citations from BibTeX file: citr
+## Adding citations from BibTeX file (or Zotero): citr
 
 ```{r out.width='4in', out.height='2.5in'}
 include_graphics("images/citr.PNG")
 ```
 
 https://github.com/crsh/citr/
+
+
+## Insert equations
+
+- Using LaTeX (`$` or `$$`)
+
+- bookdown:::mathquill
+
+- mathpix: https://github.com/jonocarroll/mathpix
+
+
 
 
 ## Revise writing style: gramr
@@ -610,6 +621,29 @@ include_graphics("images/gramr.PNG")
 ```
 
 https://github.com/ropenscilabs/gramr
+
+
+## Spell and grammar checking
+
+https://github.com/nevrome/wellspell.addin
+
+
+## Find synonyms
+
+```{r out.width='4in', out.height='2.5in'}
+include_graphics("images/gramr.PNG")
+```
+
+https://github.com/gadenbuie/synamyn
+
+
+## Word count and readability
+
+https://github.com/benmarwick/wordcountaddin
+
+
+
+
 
 
 ## Manuscript templates
@@ -651,8 +685,20 @@ include_graphics("images/bookdown.PNG")
 ```
 
 
-
 https://bookdown.org/
+
+
+## Slide presentations: xaringan
+
+https://github.com/yihui/xaringan
+
+
+## Parameterised reports
+
+https://bookdown.org/yihui/rmarkdown/parameterized-reports.html
+
+
+# Resources
 
 
 ## Rmarkdown website
