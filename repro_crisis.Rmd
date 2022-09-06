@@ -1,0 +1,377 @@
+---
+title: "Improving the reproducibility of scientific research"
+author: "Francisco Rodríguez-Sánchez"
+date: '@frod_san'
+institute: https://frodriguezsanchez.net
+output: 
+  binb::metropolis:
+    keep_tex: no
+    pandoc_args: ["--lua-filter=hideslide.lua"]
+fontsize: 12pt
+urlcolor: blue
+header-includes:
+  \definecolor{shadecolor}{RGB}{230,230,230}
+
+---
+
+```{r setup, include=FALSE}
+library("knitr")
+knitr::opts_chunk$set(echo = FALSE, cache = FALSE, background = "red",
+                      out.width = '80%',
+                      # out.height = '2in', 
+                      fig.align = 'center')
+```
+
+
+## Reproducibility Project: Cancer Biology
+
+```{r }
+include_graphics("images/RPCB_Nature.png")
+```
+
+> - Goal: Replicate 193 experiments from 53 papers
+
+> - Finally: 50 experiments from 23 papers
+
+> - ~Half **didn't replicate** (much smaller effect sizes)
+
+> - **No paper reported** all required data
+
+> - **Impossible to repeat** experiments w/o contacting authors
+
+> - 1/3 authors **didn't respond or help**
+
+
+\raggedright
+\tiny [Errington et al 2021](https://doi.org/10.7554/eLife.67995)
+\raggedleft
+
+---
+
+```{r out.width="65%"}
+include_graphics("images/unclear-methods1.png")
+```
+
+```{r out.width="50%"}
+include_graphics("images/unclear-methods2.png")
+```
+
+
+---
+
+\large
+
+Most scientific articles
+
+\Huge
+
+**are NOT reproducible**
+
+
+
+## The reproducibility crisis
+
+```{r }
+include_graphics("images/repro-crisis-Nature-2.png")
+```
+
+\raggedright
+\tiny [Baker 2016](https://doi.org/10.1038/533452a)
+\raggedleft
+
+:::
+
+
+---
+
+\Large
+
+Reproducibility
+
+\Huge
+
+~~CRISIS~~
+
+**REVOLUTION**
+
+
+
+## Reproducibility vs Replicability 
+
+```{r out.width = '4in', out.height = '2.2in'}
+include_graphics("images/ReproducibleMatrix.jpg")
+```
+
+\raggedright 
+\footnotesize [The Turing Way](https://the-turing-way.netlify.app/welcome)
+\raggedleft
+
+
+---
+
+\Large
+
+We can't guarantee that
+
+our results are **replicable**.
+
+But at least 
+
+they should be **reproducible**.
+
+\normalsize
+
+---
+
+\large
+
+Most scientific articles
+
+\huge
+
+**are NOT reproducible**
+
+
+---
+
+```{r out.width="40%", fig.align='left'}
+include_graphics("images/Nuijten.png")
+```
+
+```{r}
+include_graphics("images/statcheck.png")
+```
+
+---
+
+```{r out.width="50%", fig.align='left'}
+include_graphics("images/Nuijten.png")
+```
+
+\large
+
+1/2 articles: **inconsistencies** in p-values 
+
+1/8 articles: **grossly inconsistent** p-values 
+
+\normalsize
+(affecting conclusions -> significance)
+
+
+---
+
+In ecology
+
+\Large
+
+< 20% articles are reproducible
+
+\normalsize
+
+\raggedright 
+\footnotesize [Culina et al 2020](https://doi.org/10.1371/journal.pbio.3000763)
+\raggedleft
+
+
+
+---
+
+## We can't even reproduce our own work
+
+Data/Code lost or unusable
+
+```{r out.width="40%"}
+include_graphics("images/datamess.png")
+```
+
+
+---
+
+::: hide :::
+\small
+
+You can’t reproduce if you don’t understand where a number came from. 
+
+You can’t reproduce what you don’t remember. 
+
+And trust me: you won’t. 
+
+You can’t reproduce what you’ve lost. 
+
+What if you need access to a file as it existed 1, 10, 100, or 1000 days ago?
+
+\normalsize
+
+\raggedright 
+\footnotesize [Bond-Lamberty 2014](http://rstudio-pubs-static.s3.amazonaws.com/14911_24ffedb113f74789b709cbd694dc255c.html#/)
+\raggedleft
+
+:::
+
+
+
+## What's a reproducible article?
+
+```{r out.width = "60%"}
+include_graphics("images/text-data-code.png")
+```
+
+A scientific article is reproducible if there is **computer code** that can regenerate all results and figures from the **original data**
+
+
+
+
+
+
+---
+
+A scientific article is **advertising**, not scholarship. 
+
+The actual scholarship is the **full software environment**, 
+
+**code and data**, that produced the result.
+
+\raggedright 
+\footnotesize [Claerbout & Karrenback 1992](https://doi.org/10.1190/1.1822162)
+\raggedleft
+
+
+---
+
+\Huge
+
+Are we sharing the data?
+
+
+## Are we sharing data?
+
+```{r}
+include_graphics("images/Roche-2015.png")
+```
+
+\raggedright
+\tiny [Roche et al. 2015](https://doi.org/10.1371/journal.pbio.1002295)
+\raggedleft
+
+
+## Are we sharing data? 
+
+```{r out.width="50%"}
+include_graphics("images/Culina-data.png")
+```
+
+\raggedright
+\tiny [Culina et al. 2020](https://doi.org/10.1371/journal.pbio.3000763)
+\raggedleft
+
+
+## Are we sharing data? 
+
+\Large 
+Quickly getting better
+
+```{r out.width="40%"}
+include_graphics("images/Campbell-2019.png")
+```
+
+\raggedright
+\tiny [Campbell et al. 2019](https://doi.org/10.1016/j.tree.2018.11.010)
+\raggedleft
+
+---
+
+\Huge 
+
+Are we sharing the code?
+
+
+## Code exists but rarely shared
+
+```{r out.width = '2in', out.height = '2.5in'}
+include_graphics("images/antica.png")
+```
+
+\raggedright
+\tiny [Culina et al. 2020](https://doi.org/10.1371/journal.pbio.3000763)
+\raggedleft
+
+
+
+::: hide :::
+
+---
+
+\Large
+Las barreras
+
+\huge
+no son técnicas
+
+\normalsize
+:::
+
+
+---
+
+\Huge
+
+\center WHY?
+
+
+
+## Poor incentives
+
+```{r out.width="90%"}
+include_graphics("images/incentives.png")
+```
+
+\raggedright
+\tiny [O'Dea et al 2021](https://doi.org/10.1186/s12915-021-01006-3)
+\raggedleft
+
+
+## Doing reproducible research can be costly
+
+```{r out.width="70%", fig.align='left'}
+include_graphics("images/Poldrack.png")
+```
+
+```{r out.width="70%"}
+include_graphics("images/Allen-2019.png")
+```
+
+
+## Must value diverse contributions to reproducible research
+
+```{r }
+include_graphics("images/credit-Nature.png")
+```
+
+\raggedright
+\tiny [Pierce et al 2019](https://doi.org/10.1038/d41586-019-01715-4)
+\raggedleft
+
+
+## Let's knock down psychological barriers
+
+```{r out.width = '3in'}
+include_graphics("images/goodenough.png")
+```
+
+\raggedright
+\tiny [Barnes 2010](https://doi.org/10.1038/467753a)
+\raggedleft
+
+\normalsize
+
+- Improve training
+
+- Avoid shaming -> constructive critique
+
+- Ugly code better than no code
+
+
+
+
+
+
