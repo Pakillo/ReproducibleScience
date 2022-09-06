@@ -2,9 +2,7 @@
 title: "Does sunshine make people happy?"
 author: "F. Rodriguez-Sanchez"
 date: "20 January 2020"
-output: word_document
-csl: ecology-letters.csl
-bibliography: references.bib
+output: html_document
 ---
 
 
@@ -14,25 +12,29 @@ It is well known that individual well-being can be influenced by climatic condit
 
 
 ## Methods
-``
 
 ```{r echo=FALSE} 
 ## Read data
 data <- read.table("data.txt", header = TRUE)
 # correct error
+data <- data[-12, ]
 
 # Fit linear model
 model <- lm(happiness ~ sunshine, data = data)
 
 ```
 
-We collected data on `r nrow(data)` individuals and fitted a linear model.
+We collected data on `r nrow(data)` individuals and fitted a linear model:
+
+$$
+y = \alpha + \beta x + \epsilon 
+$$
 
 
 
 ## Results
 
-We found that...
+We found that happiness is positively related to sunshine hours (slope = `r round(coef(model)[2], digits = 2)`).
 
 ```{r echo=FALSE}
 # Print results
@@ -47,7 +49,7 @@ visreg::visreg(model)
 
 ## Discussion
 
-These results confirm that sunshine is good for happiness (slope = `r coef(model)[2]`).
+These results confirm that sunshine is good for happiness.
 
 
 ## Acknowledgements

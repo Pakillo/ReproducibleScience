@@ -1,0 +1,17 @@
+---
+title: "My template report"
+output: html_document
+params:
+  sp: Adelie
+---
+
+```{r}
+library(palmerpenguins)
+data("penguins")
+
+mydata <- subset(penguins, species == params$sp)
+
+plot(mydata$bill_length_mm, mydata$bill_depth_mm,
+     main = paste0("Species: ", params$sp))
+```
+

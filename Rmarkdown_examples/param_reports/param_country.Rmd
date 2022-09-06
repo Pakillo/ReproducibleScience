@@ -1,0 +1,23 @@
+---
+title: "Parameterised report"
+author: "FRS"
+date: "4 February 2020"
+output: html_document
+params:
+  data: countrydata.csv
+  country: Spain
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+countrydata <- read.csv("countrydata.csv")
+```
+
+```{r}
+data2plot <- subset(countrydata, country == params$country)
+hist(data2plot$heights, main = paste("Height distribution in", params$country))
+```
+
