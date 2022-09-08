@@ -78,7 +78,6 @@ include_graphics("images/repro_gradient.png")
 
 
 
-::: hide :::
 
 ## Document your data
 
@@ -98,7 +97,7 @@ write_spice()  # write machine-readable metadata
 build_site()  # build human-readable metadata report
 ```
 
-:::
+
 
 
 ## How to share code
@@ -111,12 +110,28 @@ build_site()  # build human-readable metadata report
 
 - **README**
 
+- Computational **environment** (session info)
+
 \raggedright
 \tiny [Eglen et al 2016](https://doi.org/10.1038/nn.4550)
 \raggedleft
 
 
 
+## `sessionInfo` records OS & used packages
+
+\tiny
+
+```{r eval=T}
+sessionInfo()
+```
+
+
+## `renv` also records packages used
+
+```{r eval=F}
+renv::snapshot()
+```
 
 
 

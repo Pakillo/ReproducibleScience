@@ -78,7 +78,7 @@ How to reproduce your analysis in a year, \newline or different computer?
 sessionInfo()
 ```
 
-\normalsize
+
 
 
 ## `checkpoint` reconstructs packages in given date
@@ -125,7 +125,7 @@ To install all those dependencies:
 automagic()
 ```
 
-\normalsize
+
 
 
 
