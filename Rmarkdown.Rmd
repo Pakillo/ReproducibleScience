@@ -1,25 +1,25 @@
 ---
-title: "Reproducible dynamic documents with Rmarkdown"
-# subtitle: "Nice subtitle here"
-author: "Francisco Rodríguez-Sánchez"
-institute: "https://frodriguezsanchez.net"
-date: "@frod_san"
+title: 'Reproducible dynamic documents with Rmarkdown'
+# subtitle: 'Nice subtitle here'
+author: 'Francisco Rodríguez-Sánchez'
+institute: 'https://frodriguezsanchez.net'
+# date: '@frod_san'
 aspectratio: 169
 fontsize: 10pt
 output: 
   binb::metropolis:
     keep_tex: no
-    pandoc_args: ["--lua-filter=hideslide.lua"]
+    pandoc_args: ['--lua-filter=hideslide.lua']
 urlcolor: blue
 linkcolor: blue
 header-includes:
   - \definecolor{shadecolor}{RGB}{230,230,230}
-  # - \setbeamercolor{frametitle}{bg=black}
+  - \setbeamercolor{frametitle}{bg=gray}
 ---
 
 ```{r setup, include=FALSE, cache=FALSE}
 
-library("knitr")
+library('knitr')
 
 ### Chunk options ###
 
@@ -32,10 +32,10 @@ opts_template$set(fig = list(echo = FALSE, eval = TRUE))
 opts_chunk$set(tidy = FALSE, comment = NA, highlight = TRUE, prompt = FALSE, crop = TRUE)
 
 # ## Cache
-# opts_chunk$set(cache = TRUE, cache.path = "knitr_output/cache/")
+# opts_chunk$set(cache = TRUE, cache.path = 'knitr_output/cache/')
 
 # ## Plots
-# opts_chunk$set(fig.path = "knitr_output/figures/")
+# opts_chunk$set(fig.path = 'knitr_output/figures/')
 opts_chunk$set(fig.align = 'center', out.width = '80%')
 
 ### Hooks ###
@@ -46,8 +46,8 @@ knit_hooks$set(crop = hook_pdfcrop)
 ## use tinycode = TRUE as chunk option to reduce code font size
 # see http://stackoverflow.com/a/39961605
 knit_hooks$set(tinycode = function(before, options, envir) {
-  if (before) return(paste0("\n \\", options$size, "\n\n"))
-  else return("\n\n \\normalsize \n")
+  if (before) return(paste0('\n \\', options$size, '\n\n'))
+  else return('\n\n \\normalsize \n')
   })
 
 ```
@@ -60,8 +60,8 @@ knit_hooks$set(tinycode = function(before, options, envir) {
 
 ## A typical research workflow
 
-::: {.columns align="center" totalwidth="8em"}
-::: {.column width="70%"}
+::: {.columns align='center' totalwidth='8em'}
+::: {.column width='70%'}
 \Large
 
 1.  Prepare data (**spreadsheet**)
@@ -73,9 +73,9 @@ knit_hooks$set(tinycode = function(before, options, envir) {
 4.  Start the email attachments nightmare...
 :::
 
-::: {.column width="30%"}
-```{r opts.label = 'fig', out.width="95%"}
-include_graphics("images/emailmeme.jpg")
+::: {.column width='30%'}
+```{r opts.label = 'fig', out.width='95%'}
+include_graphics('images/emailmeme.jpg')
 ```
 :::
 :::
@@ -83,7 +83,7 @@ include_graphics("images/emailmeme.jpg")
 ## This workflow is broken
 
 ```{r opts.label = 'fig'}
-include_graphics("images/workflow.png")
+include_graphics('images/workflow.png')
 ```
 
 ## Problems of a broken workflow
@@ -99,8 +99,8 @@ include_graphics("images/workflow.png")
 ## Manual copy-paste is tedious & problematic
 
 ```{r opts.label = 'fig'}
-#include_graphics("images/copy-paste-table.gif")
-include_graphics("images/copy-paste.png")
+#include_graphics('images/copy-paste-table.gif')
+include_graphics('images/copy-paste.png')
 ```
 
 \vspace{1cm}
@@ -112,7 +112,7 @@ include_graphics("images/copy-paste.png")
 ------------------------------------------------------------------------
 
 ```{r opts.label = 'fig'}
-include_graphics("images/trevor_tweet.png")
+include_graphics('images/trevor_tweet.png')
 ```
 
 ------------------------------------------------------------------------
@@ -143,12 +143,12 @@ Revising non-reproducible manuscripts is even harder
 
 .
 
-![](images/revising_nonrepro.png){width="300"}
+![](images/revising_nonrepro.png){width='300'}
 
 ## Dynamic reports
 
 ```{r opts.label = 'fig'}
-include_graphics("images/integrated_workflow.png")
+include_graphics('images/integrated_workflow.png')
 ```
 
 ## Rmarkdown documents
@@ -164,14 +164,14 @@ include_graphics("images/integrated_workflow.png")
     -   books
     -   websites...
 
-```{r opts.label = 'fig', out.width="40%"}
-include_graphics("images/rmarkdown.png")
+```{r opts.label = 'fig', out.width='40%'}
+include_graphics('images/rmarkdown.png')
 ```
 
 ## Where does this value come from?
 
-```{r opts.label = 'fig', out.width="100%"}
-include_graphics("images/Word-sentence.png")
+```{r opts.label = 'fig', out.width='100%'}
+include_graphics('images/Word-sentence.png')
 ```
 
 ## Dynamic documents with Rmarkdown
@@ -182,7 +182,7 @@ surv.diff <- 30
 
 *Rmarkdown*:
 
- \hspace{5mm} Survival in population A was `` `r inline_expr("surv.diff")` `` % higher
+ \hspace{5mm} Survival in population A was `` `r inline_expr('surv.diff')` `` % higher
 
 \vspace{6mm}
 
@@ -199,12 +199,12 @@ datos <- data.frame(x, y)
 ```
 
 ```{r eval=TRUE}
-mydata <- read.csv("data.txt")
+mydata <- read.csv('data.txt')
 ```
 
 *Rmarkdown:*
 
- \hspace{5mm} We measured `` `r inline_expr("nrow(mydata)")` `` individuals
+ \hspace{5mm} We measured `` `r inline_expr('nrow(mydata)')` `` individuals
 
 \vspace{5mm}
 
@@ -218,8 +218,8 @@ mydata <- read.csv("data.txt")
 
 ## Rmarkdown: code (R, Python, etc) + text (Markdown)
 
-```{r opts.label = 'fig', out.width="100%"}
-include_graphics("images/Rmd-exp-eng.png")
+```{r opts.label = 'fig', out.width='100%'}
+include_graphics('images/Rmd-exp-eng.png')
 ```
 
 ## Code chunk options
@@ -235,7 +235,8 @@ include_graphics("images/Rmd-exp-eng.png")
     ```{r} `r ''`
     #| echo = FALSE
     #| eval = TRUE
-    #| fig.cap = "My figure caption"
+    #| fig.cap = 'My figure caption'
+    
     plot(iris)
     ```
 
@@ -249,7 +250,7 @@ include_graphics("images/Rmd-exp-eng.png")
 
 ## Naming chunks: figure files take chunk name
 
-![](images/naming_figs.png){width="180"}
+![](images/naming_figs.png){width='180'}
 
 ## ¡Not only R! Python, Julia, C++, SQL, Stan, etc
 
@@ -281,8 +282,8 @@ Or use [Visual Markdown Editor](https://rstudio.github.io/visual-markdown-editin
 
 ## Regenerate Word/PDF/HTML with one click
 
-```{r opts.label = 'fig', out.width="100%"}
-include_graphics("images/Fig3.png")
+```{r opts.label = 'fig', out.width='100%'}
+include_graphics('images/Fig3.png')
 ```
 
 ------------------------------------------------------------------------
@@ -299,8 +300,8 @@ include_graphics("images/Fig3.png")
 
 ## Why Rmarkdown?
 
-```{r opts.label = "fig"}
-include_graphics("images/why-rmarkdown.PNG")
+```{r opts.label = 'fig'}
+include_graphics('images/why-rmarkdown.PNG')
 ```
 
 <https://community.rstudio.com/t/convince-me-to-start-using-r-markdown/1636/12>
@@ -333,8 +334,8 @@ install_tinytex()
 
 ## 'Visual Rmarkdown': Rmd as in word processor
 
-```{r opts.label = "fig"}
-include_graphics("images/visualRmd.png")
+```{r opts.label = 'fig'}
+include_graphics('images/visualRmd.png')
 ```
 
 <https://rstudio.github.io/visual-markdown-editing>
@@ -344,7 +345,7 @@ include_graphics("images/visualRmd.png")
 ```{r echo=FALSE, eval=TRUE}
 library(xtable)
 #model <- lm(y ~ x, data = datos)
-mydata <- read.table("data.txt", header = TRUE)
+mydata <- read.table('data.txt', header = TRUE)
 model <- lm(happiness ~ sunshine, data = mydata)
 ```
 
@@ -353,7 +354,7 @@ model <- lm(happiness ~ sunshine, data = mydata)
 xtable(model)
 ```
 
-```{r echo=FALSE, eval=TRUE, results = "asis"}
+```{r echo=FALSE, eval=TRUE, results = 'asis'}
 print(xtable(model), comment = FALSE)
 ```
 
@@ -365,7 +366,7 @@ Many alternatives: `gtsummary`, `modelsummary`, `huxtable`, etc
 
 We fitted a linear model:
 
-```{r eval=T, results="asis"}
+```{r eval=T, results='asis'}
 library('equatiomatic')
 model <- lm(happiness ~ sunshine, data = mydata)
 extract_eq(model)
@@ -375,8 +376,8 @@ extract_eq(model)
 
 \scriptsize
 
-```{r eval=T, results="asis"}
-library("report")
+```{r eval=T, results='asis'}
+library('report')
 model <- lm(happiness ~ sunshine, data = mydata)
 report(model)
 ```
@@ -397,22 +398,22 @@ $$
 
 ## Citing bibliography
 
-```{r opts.label = "fig"}
-include_graphics("images/citations-Rstudio14.png")
+```{r opts.label = 'fig'}
+include_graphics('images/citations-Rstudio14.png')
 ```
 
 \footnotesize <https://rstudio.github.io/visual-markdown-editing/#/citations>
 
 ## Using BibTeX file with references
 
-```{r opts.label = "fig", out.width="60%"}
-include_graphics("images/bibtex.png")
+```{r opts.label = 'fig', out.width='60%'}
+include_graphics('images/bibtex.png')
 ```
 
 ## Format bibliography for any journal
 
-```{r opts.label = "fig"}
-include_graphics("images/csl.png")
+```{r opts.label = 'fig'}
+include_graphics('images/csl.png')
 ```
 
 Thousands of Citation Styles:
@@ -423,8 +424,8 @@ Thousands of Citation Styles:
 
 ## Rmarkdown templates
 
-::: {.columns align="center" totalwidth="8em"}
-::: {.column width="50%"}
+::: {.columns align='center' totalwidth='8em'}
+::: {.column width='50%'}
 -   rticles
 
 -   papaja
@@ -440,9 +441,9 @@ Thousands of Citation Styles:
 -   GitHub!
 :::
 
-::: {.column width="50%"}
-```{r opts.label = 'fig', out.width="95%"}
-include_graphics("images/pnas.png")
+::: {.column width='50%'}
+```{r opts.label = 'fig', out.width='95%'}
+include_graphics('images/pnas.png')
 ```
 :::
 :::
@@ -450,7 +451,7 @@ include_graphics("images/pnas.png")
 ## Accessing Rmd templates
 
 ```{r opts.label = 'fig'}
-include_graphics("images/rstudio_templates.png")
+include_graphics('images/rstudio_templates.png')
 ```
 
 ## Revise writing style: gramr
@@ -475,26 +476,45 @@ include_graphics("images/rstudio_templates.png")
 
 <https://github.com/benmarwick/wordcountaddin>
 
+## Automated reproducibility checks
+
+<https://github.com/brandmaier/reproducibleRchunks>
+
+```{r opts.label = 'fig', out.width='40%', fig.align='left'}
+include_graphics('images/reproducibleR.png')
+```
+
+```{r opts.label = 'fig', out.width='60%'}
+include_graphics('images/reproducibleR_2.png')
+```
+
+```{r opts.label = 'fig', out.width='60%'}
+include_graphics('images/reproducibleR_3.png')
+```
+
+
+
+
 ## Write books, theses, with `bookdown`
 
-```{r opts.label = "fig"}
-include_graphics("images/bookdown.PNG")
+```{r opts.label = 'fig', out.width='95%'}
+include_graphics('images/bookdown.PNG')
 ```
 
 <https://bookdown.org/>
 
 ## Slide presentations with `xaringan`
 
-```{r opts.label = "fig"}
-include_graphics("images/xaringan.png")
+```{r opts.label = 'fig'}
+include_graphics('images/xaringan.png')
 ```
 
 <https://slides.yihui.org/xaringan/>
 
 ## Parameterised reports
 
-```{r opts.label = "fig", out.width="50%"}
-include_graphics("images/param_report_render.png")
+```{r opts.label = 'fig', out.width='50%'}
+include_graphics('images/param_report_render.png')
 ```
 
 \tiny <https://bookdown.org/yihui/rmarkdown/parameterized-reports.html>
@@ -506,7 +526,7 @@ library('rmarkdown')
 
 for (i in unique(penguins$species)) {
   
-  render("template_report.Rmd", 
+  render('template_report.Rmd', 
          params = list(sp = i))
   
 }
@@ -520,7 +540,7 @@ for (i in unique(penguins$species)) {
 
 -   [redoc](https://noamross.github.io/redoc/)
 
-![](images/trackdown-workflow.png){height="900 px"}
+![](images/trackdown-workflow.png){height='900 px'}
 
 # Rmarkdown resources
 
@@ -528,41 +548,64 @@ for (i in unique(penguins$species)) {
 
 <http://rmarkdown.rstudio.com/>
 
-```{r opts.label = "fig"}
-include_graphics("images/rmdrstudio.PNG")
+```{r opts.label = 'fig'}
+include_graphics('images/rmdrstudio.PNG')
 ```
 
 ## Rmarkdown cheat sheet
 
-```{r opts.label = "fig"}
-include_graphics("images/rmarkdown-cheatsheet.png")
+```{r opts.label = 'fig'}
+include_graphics('images/rmarkdown-cheatsheet.png')
 ```
 
 <https://www.rstudio.org/links/r_markdown_cheat_sheet>
 
 ## Rmarkdown reference guide
 
-```{r opts.label = "fig", out.width="60%"}
-include_graphics("images/rmarkdown-reference.png")
+```{r opts.label = 'fig', out.width='60%'}
+include_graphics('images/rmarkdown-reference.png')
 ```
 
-<https://www.rstudio.org/links/r_markdown_reference_guide>
+\scriptsize <https://github.com/rstudio/cheatsheets/blob/main/old/pdfs/rmarkdown-reference.pdf>
 
 ## Rmarkdown books
 
-```{r opts.label = "fig", out.width="60%"}
-include_graphics("images/rmarkdown-book.PNG")
+```{r opts.label = 'fig', out.width='60%'}
+include_graphics('images/rmarkdown-book.PNG')
 ```
 
 <https://bookdown.org/yihui/rmarkdown/>
 
 <https://bookdown.org/yihui/rmarkdown-cookbook/>
 
+
+# Quarto
+
+
 ## Quarto: 2nd generation Rmarkdown
 
-![](images/quarto.png)
+![](images/quarto2.png)
 
 <https://quarto.org/>
+
+## Quarto manuscripts
+
+```{r opts.label = 'fig', out.width='80%'}
+include_graphics('images/quarto_ms.png')
+```
+
+\scriptsize
+
+<https://quarto-ext.github.io/manuscript-template-jupyter/>
+
+<https://quarto.org/docs/manuscripts/>
+
+
+## Hundreds of Quarto extensions
+
+<https://m.canouil.dev/quarto-extensions/>
+
+Journal templates: <https://quarto.org/docs/extensions/listing-journals.html>
 
 # Your turn
 

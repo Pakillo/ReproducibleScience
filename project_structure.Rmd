@@ -3,7 +3,7 @@ title: "Structuring projects"
 # subtitle: "Nice subtitle here"
 author: "Francisco Rodriguez-Sanchez"
 institute: "https://frodriguezsanchez.net"
-date: "@frod_san"
+# date: "@frod_san"
 aspectratio: 169
 fontsize: 10pt
 output: 
@@ -179,8 +179,6 @@ setwd("C:/Users/FRS")
 ## Project organisation example
 
 ```
-myproject
-
 - data
   - data-raw       
   - data-clean
@@ -225,7 +223,7 @@ knitr::include_graphics("images/readme.png")
 
 ## Document your data
 
-https://docs.ropensci.org/dataspice/
+\footnotesize
 
 ```{r echo=TRUE, eval=FALSE}
 library("dataspice")
@@ -243,6 +241,7 @@ write_spice()  # write machine-readable metadata
 build_site()  # build human-readable metadata report
 ```
 
+\footnotesize
 
 ## Write modular code
 

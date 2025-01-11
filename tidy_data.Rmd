@@ -1,15 +1,15 @@
 ---
-title: "Tidy data"
-# subtitle: ""
-author: "Francisco Rodriguez-Sanchez"
-institute: "https://frodriguezsanchez.net"
-date: "@frod_san"
+title: 'Tidy data'
+# subtitle: ''
+author: 'Francisco Rodriguez-Sanchez'
+institute: 'https://frodriguezsanchez.net'
+# date: '@frod_san'
 aspectratio: 43
 fontsize: 10pt
 output: 
   binb::metropolis:
     keep_tex: no
-    pandoc_args: ["--lua-filter=hideslide.lua"]
+    pandoc_args: ['--lua-filter=hideslide.lua']
 urlcolor: blue
 linkcolor: blue
 header-includes:
@@ -20,7 +20,7 @@ header-includes:
 
 ```{r include=FALSE, cache=FALSE}
 
-library("knitr")
+library('knitr')
 
 ### Chunk options ###
 
@@ -33,10 +33,10 @@ opts_template$set(fig = list(echo = FALSE, eval = TRUE))
 opts_chunk$set(tidy = FALSE, comment = NA, highlight = TRUE, prompt = FALSE, crop = TRUE)
 
 # ## Cache
-# opts_chunk$set(cache = TRUE, cache.path = "knitr_output/cache/")
+# opts_chunk$set(cache = TRUE, cache.path = 'knitr_output/cache/')
 
 # ## Plots
-# opts_chunk$set(fig.path = "knitr_output/figures/")
+# opts_chunk$set(fig.path = 'knitr_output/figures/')
 opts_chunk$set(fig.align = 'center', out.width = '90%')
 
 ### Hooks ###
@@ -47,8 +47,8 @@ knit_hooks$set(crop = hook_pdfcrop)
 ## use tinycode = TRUE as chunk option to reduce code font size
 # see http://stackoverflow.com/a/39961605
 knit_hooks$set(tinycode = function(before, options, envir) {
-  if (before) return(paste0("\n \\", options$size, "\n\n"))
-  else return("\n\n \\normalsize \n")
+  if (before) return(paste0('\n \\', options$size, '\n\n'))
+  else return('\n\n \\normalsize \n')
   })
 
 ```
@@ -59,12 +59,12 @@ knit_hooks$set(tinycode = function(before, options, envir) {
 ## Tidy data
 
 ```{r out.width='100%'}
-include_graphics("images/tidydata.png")
+include_graphics('images/tidydata.png')
 ```
 
 
 ```{r out.width='100%'}
-include_graphics("images/gatherdata.png")
+include_graphics('images/gatherdata.png')
 ```
 
 \scriptsize
@@ -76,8 +76,20 @@ http://r4ds.had.co.nz/tidy.html
 ## Be careful with data entry and management in Excel!
 
 ```{r}
-include_graphics("images/excel-genes.png")
+include_graphics('images/excel-genes.png')
 ```
+
+
+---
+
+```{r out.width='100%'}
+include_graphics('images/tabular_data.png')
+```
+
+\raggedright
+\tiny [Hertz & McNeill 2024](https://doi.org/10.1371/journal.pcbi.1012604)
+\raggedleft
+
 
 
 ## Spreadsheet good practices
@@ -121,15 +133,15 @@ include_graphics("images/excel-genes.png")
 
 :::::::::::::: {.columns align=center}
 
-::: {.column width="40%"}
+::: {.column width='40%'}
 ```{r out.width='2in'}
-include_graphics("images/DC-multiple-info.png")
+include_graphics('images/DC-multiple-info.png')
 ```
 :::
 
-::: {.column width="60%" }
+::: {.column width='60%' }
 ```{r out.width='2in'}
-include_graphics("images/DC-single-info.png")
+include_graphics('images/DC-single-info.png')
 ```
 :::
 ::::::::::::::
@@ -140,7 +152,7 @@ Source: Data Carpentry
 ## Multiple tables
 
 ```{r out.width='4in'}
-include_graphics("images/DC_datasheet_example.jpg")
+include_graphics('images/DC_datasheet_example.jpg')
 ```
 
 
@@ -153,15 +165,15 @@ Could you avoid new tab by adding a column to original spreadsheet?
 
 :::::::::::::: {.columns align=center}
 
-::: {.column width="40%"}
+::: {.column width='40%'}
 ```{r out.width='2in'}
-include_graphics("images/DC-formatting.png")
+include_graphics('images/DC-formatting.png')
 ```
 :::
 
-::: {.column width="60%" }
+::: {.column width='60%' }
 ```{r out.width='2in'}
-include_graphics("images/DC_good_formatting.png")
+include_graphics('images/DC_good_formatting.png')
 ```
 :::
 ::::::::::::::

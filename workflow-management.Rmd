@@ -1,14 +1,14 @@
 ---
-title: "Managing your workflow"
-# subtitle: "Nice subtitle here"
-author: "Francisco Rodriguez-Sanchez"
-institute: "https://frodriguezsanchez.net"
-date: "@frod_san"
+title: 'Managing your workflow'
+# subtitle: 'Nice subtitle here'
+author: 'Francisco Rodriguez-Sanchez'
+institute: 'https://frodriguezsanchez.net'
+# date: '@frod_san'
 fontsize: 10pt
 output: 
   binb::metropolis:
     keep_tex: no
-    pandoc_args: ["--lua-filter=hideslide.lua"]
+    pandoc_args: ['--lua-filter=hideslide.lua']
 urlcolor: blue
 linkcolor: blue
 header-includes:
@@ -19,7 +19,7 @@ header-includes:
 
 ```{r include=FALSE, cache=FALSE}
 
-library("knitr")
+library('knitr')
 
 ### Chunk options ###
 
@@ -32,10 +32,10 @@ opts_template$set(fig = list(echo = FALSE, eval = TRUE))
 opts_chunk$set(tidy = FALSE, comment = NA, highlight = TRUE, prompt = FALSE, crop = TRUE)
 
 # ## Cache
-# opts_chunk$set(cache = TRUE, cache.path = "knitr_output/cache/")
+# opts_chunk$set(cache = TRUE, cache.path = 'knitr_output/cache/')
 
 # ## Plots
-# opts_chunk$set(fig.path = "knitr_output/figures/")
+# opts_chunk$set(fig.path = 'knitr_output/figures/')
 opts_chunk$set(fig.align = 'center', out.width = '80%')
 
 ### Hooks ###
@@ -46,8 +46,8 @@ knit_hooks$set(crop = hook_pdfcrop)
 ## use tinycode = TRUE as chunk option to reduce code font size
 # see http://stackoverflow.com/a/39961605
 knit_hooks$set(tinycode = function(before, options, envir) {
-  if (before) return(paste0("\n \\", options$size, "\n\n"))
-  else return("\n\n \\normalsize \n")
+  if (before) return(paste0('\n \\', options$size, '\n\n'))
+  else return('\n\n \\normalsize \n')
   })
 
 ```
@@ -58,8 +58,8 @@ knit_hooks$set(tinycode = function(before, options, envir) {
 
 In complex projects we must **keep pieces organised**
 
-```{r opts.label = "fig"}
-include_graphics("images/puzzle.jpeg")
+```{r opts.label = 'fig'}
+include_graphics('images/puzzle.jpeg')
 ```
 
 
@@ -69,11 +69,11 @@ include_graphics("images/puzzle.jpeg")
 `makefile.R`
 
 ```{r }
-source("clean_data.R")
+source('clean_data.R')
 
-source("fit_model.R")
+source('fit_model.R')
 
-render("report.Rmd")
+render('report.Rmd')
 ```
 
 
@@ -89,21 +89,21 @@ render("report.Rmd")
 #### READ AND PREPROCESS DATA #####
 
 ## Read site info
-read_siteinfo("data-raw/sites_info_raw.csv")
+read_siteinfo('data-raw/sites_info_raw.csv')
 
 ## Read and prepare species info
-read_sppinfo(sppdata = "data-raw/species_info_raw.csv")
+read_sppinfo(sppdata = 'data-raw/species_info_raw.csv')
 
 ## Prepare dataset
 make_dataset()
 
 
 #### EXPLORATORY ANALYSIS ####
-rmarkdown::render("analyses/EDA.Rmd")
+rmarkdown::render('analyses/EDA.Rmd')
 
 
 #### MANUSCRIPT ####
-rmarkdown::render("manuscript/cercados_Almoraima/cercados_Almoraima.Rmd")
+rmarkdown::render('manuscript/cercados_Almoraima/cercados_Almoraima.Rmd')
 ```
 
 \normalsize
@@ -112,8 +112,8 @@ rmarkdown::render("manuscript/cercados_Almoraima/cercados_Almoraima.Rmd")
 
 ## `targets`: advanced workflow management
 
-```{r opts.label = "fig"}
-include_graphics("images/drake-plan.png")
+```{r opts.label = 'fig'}
+include_graphics('images/drake-plan.png')
 ```
 
 \footnotesize https://docs.ropensci.org/targets/
@@ -123,13 +123,9 @@ include_graphics("images/drake-plan.png")
 
 ---
 
-\Large
-Write makefile.R for your project
+- Write makefile.R for your project
 
+- Try `targets` minimal example 
 
----
-
-Try `targets` minimal example
-
-https://github.com/wlandau/targets-minimal
+- https://github.com/wlandau/targets-minimal
 

@@ -1,12 +1,12 @@
 ---
-title: "Why doing reproducible research?"
-author: "Francisco Rodríguez-Sánchez"
-date: '@frod_san'
+title: 'Why doing reproducible research?'
+author: 'Francisco Rodríguez-Sánchez'
+# date: '@frod_san'
 institute: https://frodriguezsanchez.net
 output: 
   binb::metropolis:
     keep_tex: no
-    pandoc_args: ["--lua-filter=hideslide.lua"]
+    pandoc_args: ['--lua-filter=hideslide.lua']
 fontsize: 12pt
 urlcolor: blue
 header-includes:
@@ -15,8 +15,8 @@ header-includes:
 ---
 
 ```{r include=FALSE}
-library("knitr")
-knitr::opts_chunk$set(echo = FALSE, cache = FALSE, background = "red",
+library('knitr')
+knitr::opts_chunk$set(echo = FALSE, cache = FALSE, background = 'red',
                       out.width = '80%',
                       # out.height = '2in', 
                       fig.align = 'center')
@@ -30,19 +30,19 @@ knitr::opts_chunk$set(echo = FALSE, cache = FALSE, background = "red",
 ## Automation (good code) saves time
 
 ```{r }
-include_graphics("images/TrevorBranch-tweet.png")
+include_graphics('images/TrevorBranch-tweet.png')
 ```
 
 
 ## Code = fully traceable, reproducible analysis
 
 :::::::::::::: {.columns align=center totalwidth=8em}
-::: {.column width="50%"}
+::: {.column width='50%'}
 ```{r }
-include_graphics("images/unclear-methods.png")
+include_graphics('images/unclear-methods.png')
 ```
 :::
-::: {.column width="50%"}
+::: {.column width='50%'}
 Code advantages:
 
 - Easier writing
@@ -58,8 +58,8 @@ Code advantages:
 
 ## Data without code NOT enough for reproducibility
 
-```{r out.width="95%"}
-include_graphics("images/data-not-enough.jpg")
+```{r out.width='95%'}
+include_graphics('images/data-not-enough.jpg')
 ```
 
 \raggedright
@@ -73,8 +73,8 @@ include_graphics("images/data-not-enough.jpg")
 
 Do soccer referees give more red cards to dark-skin players?
 
-```{r out.width="95%"}
-include_graphics("images/many-analysts.png")
+```{r out.width='95%'}
+include_graphics('images/many-analysts.png')
 ```
 
 29 teams: 2/3 found significant effect 
@@ -87,12 +87,12 @@ include_graphics("images/many-analysts.png")
 
 ## Transparency prevents bad practices
 
-```{r out.width="50%"}
-include_graphics("images/Fraser-2018.png")
+```{r out.width='50%'}
+include_graphics('images/Fraser-2018.png')
 ```
 
-```{r out.width="70%"}
-include_graphics("images/Fraser-2018-fig.png")
+```{r out.width='70%'}
+include_graphics('images/Fraser-2018-fig.png')
 ```
 
 p-hacking, HARKing, data fabrication...
@@ -107,30 +107,30 @@ p-hacking, HARKing, data fabrication...
 ## Transparency avoids unnecessary disputes
 
 ```{r}
-include_graphics("images/physics-code-error.png")
+include_graphics('images/physics-code-error.png')
 ```
 
 ```{r}
-include_graphics("images/physics-code-error-2.png")
+include_graphics('images/physics-code-error-2.png')
 ```
 
 
 
 ## Transparency brings better science
 
-```{r out.width="70%"}
-include_graphics("images/Alexey-tuit.png")
+```{r out.width='70%'}
+include_graphics('images/Alexey-tuit.png')
 ```
 
 
 ## Many journals (and funders) value/require reproducibility
 
-```{r out.width="90%"}
-include_graphics("images/ESA-policy.png")
+```{r out.width='90%'}
+include_graphics('images/ESA-policy.png')
 ```
 
-```{r out.width="20%", fig.align='right'}
-include_graphics("images/ESA-logo.jpg")
+```{r out.width='20%', fig.align='right'}
+include_graphics('images/ESA-logo.jpg')
 ```
 
 
@@ -146,10 +146,21 @@ will be given **higher priority** for publication'
 (*Molecular Ecology*)
 
 
+## Many journals require reproducibility
+
+```{r out.width='90%'}
+include_graphics('images/EcoLett.png')
+```
+
+'We require the **data and code** for reproducing statistical results and generating figures and  tables'
+
+'This material will need to be supplied at the **time of submission**'
+
+
 ## Higher impact: cites, reuse, reputation
 
 ```{r}
-include_graphics("images/cites-advantage.png")
+include_graphics('images/cites-advantage.png')
 ```
 
 \raggedright
@@ -157,14 +168,24 @@ include_graphics("images/cites-advantage.png")
 \raggedleft
 
 
-## Let's stop losing data & code 
-
-```{r out.width="40%", fig.align='left'}
-include_graphics("images/Vines-title.png")
+```{r}
+include_graphics('images/Maitner2024.png')
 ```
 
-```{r out.width="60%"}
-include_graphics("images/Vines-datalost.png")
+\raggedright
+\tiny [Maitner et al 2024](https://doi.org/10.1002/ece3.70030)
+\raggedleft
+
+
+
+## Let's stop losing data & code 
+
+```{r out.width='40%', fig.align='left'}
+include_graphics('images/Vines-title.png')
+```
+
+```{r out.width='60%'}
+include_graphics('images/Vines-datalost.png')
 ```
 
 \raggedright
@@ -175,12 +196,12 @@ include_graphics("images/Vines-datalost.png")
 
 ## Open data & code enable synthesis
 
-```{r out.width="60%", fig.align='left'}
-include_graphics("images/Wolkovich.png")
+```{r out.width='60%', fig.align='left'}
+include_graphics('images/Wolkovich.png')
 ```
 
 ```{r }
-include_graphics("images/Wolkovich-2.png")
+include_graphics('images/Wolkovich-2.png')
 ```
 
 \raggedright
@@ -191,12 +212,12 @@ include_graphics("images/Wolkovich-2.png")
 
 ## Open data & code enable synthesis
 
-```{r out.width="60%", fig.align='left'}
-include_graphics("images/Wolkovich.png")
+```{r out.width='60%', fig.align='left'}
+include_graphics('images/Wolkovich.png')
 ```
 
-```{r out.width="60%"}
-include_graphics("images/Wolkovich-1.png")
+```{r out.width='60%'}
+include_graphics('images/Wolkovich-1.png')
 ```
 
 \raggedright
@@ -204,14 +225,60 @@ include_graphics("images/Wolkovich-1.png")
 \raggedleft
 
 
+::: hide :::
+
 ## Reproducible workflows facilitate collaboration
 
 and make everyone happier
 
-```{r echo=FALSE, out.width="90%"}
-include_graphics("images/happy-collab.jpg")
+```{r echo=FALSE, out.width='90%'}
+include_graphics('images/happy-collab.jpg')
 ```
 
+:::
+
+
+## Same data -> different results 
+
+Do soccer referees give more red cards to dark-skin players?
+
+```{r out.width='95%'}
+include_graphics('images/many-analysts.png')
+```
+
+29 teams: 2/3 found significant effect 
+
+\raggedright
+\tiny [Silberzahn et al 2018](https://doi.org/10.1177%2F2515245917747646)
+\raggedleft
+
+
+## 73 teams testing the same hypothesis with the same data
+
+```{r out.width='60%', fig.align='left'}
+include_graphics('images/Breznau_PNAS.png')
+```
+
+```{r out.width='50%'}
+include_graphics('images/Breznau_PNAS_fig.jpg')
+```
+
+'This reveals a **universe of uncertainty** that remains hidden when considering a single study in isolation'
+
+'These results call for greater **epistemic humility** and **clarity in reporting** scientific findings'
+
+\raggedright
+\tiny [Breznau et al 2022](https://doi.org/10.1073/pnas.2203150119)
+\raggedleft
+
+
+## 132 teams asking same question with same data
+
+How does sibling competition affect nestling growth in blue tits?
+
+```{r out.width='50%'}
+include_graphics('images/Gould.png')
+```
 
 
 

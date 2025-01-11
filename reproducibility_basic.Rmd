@@ -1,22 +1,23 @@
 ---
-title: "Basic reproducibility"
-author: "Francisco Rodríguez-Sánchez"
-date: '@frod_san'
+title: 'Basic reproducibility'
+author: 'Francisco Rodríguez-Sánchez'
+# date: '@frod_san'
 institute: https://frodriguezsanchez.net
 output: 
   binb::metropolis:
     keep_tex: no
-    pandoc_args: ["--lua-filter=hideslide.lua"]
+    pandoc_args: ['--lua-filter=hideslide.lua']
 fontsize: 12pt
 urlcolor: blue
 header-includes:
-  \definecolor{shadecolor}{RGB}{230,230,230}
+  - \definecolor{shadecolor}{RGB}{230,230,230}
+  # - \setbeamercolor{frametitle}{bg=gray}
 
 ---
 
 ```{r setup, include=FALSE}
-library("knitr")
-knitr::opts_chunk$set(echo = FALSE, cache = FALSE, background = "red",
+library('knitr')
+knitr::opts_chunk$set(echo = FALSE, cache = FALSE, background = 'red',
                       out.width = '80%',
                       # out.height = '2in', 
                       fig.align = 'center')
@@ -27,7 +28,7 @@ knitr::opts_chunk$set(echo = FALSE, cache = FALSE, background = "red",
 ## Reproducibility is a gradient
 
 ```{r out.width = '4.5in', out.height = '1.7in'}
-include_graphics("images/repro_gradient.png")
+include_graphics('images/repro_gradient.png')
 ```
 
 \raggedright
@@ -81,8 +82,10 @@ include_graphics("images/repro_gradient.png")
 
 ## Document your data
 
+\footnotesize
+
 ```{r echo=TRUE, eval=FALSE}
-library("dataspice")
+library('dataspice')
 create_spice()   # create CSV templates for metadata
 
 edit_creators()  # open Shiny apps to edit the CSVs
@@ -129,16 +132,19 @@ sessionInfo()
 
 ## `renv` also records packages used
 
-```{r eval=F}
+```{r eval=F, echo=TRUE}
 renv::snapshot()
 ```
 
+creates `renv.lock`file recording dependencies. 
+
+Can use `renv::restore()` to restore packages later or in different computer.
 
 
 ## Basic reproducibility
 
-```{r out.width = "60%"}
-include_graphics("images/text-data-code.png")
+```{r out.width = '60%'}
+include_graphics('images/text-data-code.png')
 ```
 
 DATA + CODE 

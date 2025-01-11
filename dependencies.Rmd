@@ -1,14 +1,14 @@
 ---
-title: "Controlling dependencies"
-# subtitle: "Nice subtitle here"
-author: "Francisco Rodriguez-Sanchez"
-institute: "https://frodriguezsanchez.net"
-date: "@frod_san"
+title: 'Controlling dependencies'
+# subtitle: 'Nice subtitle here'
+author: 'Francisco Rodriguez-Sanchez'
+institute: 'https://frodriguezsanchez.net'
+# date: '@frod_san'
 fontsize: 10pt
 output: 
   binb::metropolis:
     keep_tex: no
-    pandoc_args: ["--lua-filter=hideslide.lua"]
+    pandoc_args: ['--lua-filter=hideslide.lua']
 urlcolor: blue
 linkcolor: blue
 header-includes:
@@ -19,7 +19,7 @@ header-includes:
 
 ```{r include=FALSE, cache=FALSE}
 
-library("knitr")
+library('knitr')
 
 ### Chunk options ###
 
@@ -32,10 +32,10 @@ opts_template$set(fig = list(echo = FALSE, eval = TRUE))
 opts_chunk$set(tidy = FALSE, comment = NA, highlight = TRUE, prompt = FALSE, crop = TRUE)
 
 # ## Cache
-# opts_chunk$set(cache = TRUE, cache.path = "knitr_output/cache/")
+# opts_chunk$set(cache = TRUE, cache.path = 'knitr_output/cache/')
 
 # ## Plots
-# opts_chunk$set(fig.path = "knitr_output/figures/")
+# opts_chunk$set(fig.path = 'knitr_output/figures/')
 opts_chunk$set(fig.align = 'center', out.width = '80%')
 
 ### Hooks ###
@@ -46,8 +46,8 @@ knit_hooks$set(crop = hook_pdfcrop)
 ## use tinycode = TRUE as chunk option to reduce code font size
 # see http://stackoverflow.com/a/39961605
 knit_hooks$set(tinycode = function(before, options, envir) {
-  if (before) return(paste0("\n \\", options$size, "\n\n"))
-  else return("\n\n \\normalsize \n")
+  if (before) return(paste0('\n \\', options$size, '\n\n'))
+  else return('\n\n \\normalsize \n')
   })
 
 ```
@@ -56,8 +56,8 @@ knit_hooks$set(tinycode = function(before, options, envir) {
 
 ---
 
-```{r opts.label="fig", out.width="70%"}
-include_graphics("images/sotobosque.png")
+```{r opts.label='fig', out.width='70%'}
+include_graphics('images/sotobosque.png')
 ```
 
 
@@ -86,9 +86,11 @@ sessionInfo()
 ```{r }
 library('checkpoint')
 
-checkpoint("2019-10-08")
+options(checkpoint.mranUrl="https://packagemanager.posit.co/")
 
-source("analysis.R")
+checkpoint('2019-10-08')
+
+source('analysis.R')
 ```
 
 1. Detects packages used
@@ -129,7 +131,7 @@ automagic()
 
 
 
-## `renv` also controls dependencies
+## `renv`: recommended to control dependencies
 
 ```{r }
 renv::init()  
@@ -142,7 +144,7 @@ renv::restore()
 # Regenerate dependencies from lockfile
 ```
 
-https://environments.rstudio.com/
+https://rstudio.github.io/renv/
 
 
 
@@ -173,8 +175,8 @@ from a `Dockerfile`
 
 ## `liftr`: process Rmd in Docker container
 
-```{r opts.label="fig", out.width="95%"}
-include_graphics("images/liftr.png")
+```{r opts.label='fig', out.width='95%'}
+include_graphics('images/liftr.png')
 ```
 
 \footnotesize https://liftr.me/
@@ -183,27 +185,44 @@ include_graphics("images/liftr.png")
 ## `containerit` creates Dockerfile
 
 ```{r }
-library("containerit")
+library('containerit')
 
-dockfile <- dockerfile(from = "mypaper.Rmd")
+dockfile <- dockerfile(from = 'mypaper.Rmd')
 ```
 
 \footnotesize https://o2r.info/containerit
 
 
+## `tugboat` created Dockerfile w/ entire software environment
+
+```{r opts.label = 'fig'}
+include_graphics('images/tugboat.png')
+```
+
+```{r echo=TRUE, eval=FALSE}
+library(tugboat)
+create()
+build()
+```
+
+https://www.dmolitor.com/tugboat/
+
+
+::: hide :::
+
 ## `holepunch`: reproduce analysis in the cloud (Binder)
 
-```{r opts.label = "fig"}
-include_graphics("images/holepunch.png")
+```{r opts.label = 'fig'}
+include_graphics('images/holepunch.png')
 ```
 
 \footnotesize https://karthik.github.io/holepunch/
 
-
+:::
 
 # Your turn
 
-## Checkpoint
+---
 
 \Large
 
@@ -211,17 +230,10 @@ include_graphics("images/holepunch.png")
 
 - Call `checkpoint` on former date
 
-
-## automagic/renv
-
-\Large
-
 - Record dependencies:
-    - `automagic::make_deps_file()` 
-    - `renv::snapshot`
+  - `renv::snapshot`
 
 - Recreate packages
-    - `automagic()`
-    - `restore()`
+  - `restore()`
     
     

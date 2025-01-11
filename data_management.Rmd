@@ -1,15 +1,15 @@
 ---
-title: "Data management"
-# subtitle: ""
-author: "Francisco Rodriguez-Sanchez"
-institute: "https://frodriguezsanchez.net"
-date: "@frod_san"
+title: 'Data management'
+# subtitle: ''
+author: 'Francisco Rodriguez-Sanchez'
+institute: 'https://frodriguezsanchez.net'
+# date: '@frod_san'
 aspectratio: 169
 fontsize: 10pt
 output: 
   binb::metropolis:
     keep_tex: no
-    pandoc_args: ["--lua-filter=hideslide.lua"]
+    pandoc_args: ['--lua-filter=hideslide.lua']
 urlcolor: blue
 linkcolor: blue
 header-includes:
@@ -20,7 +20,7 @@ header-includes:
 
 ```{r include=FALSE, cache=FALSE}
 
-library("knitr")
+library('knitr')
 
 ### Chunk options ###
 
@@ -33,10 +33,10 @@ opts_template$set(fig = list(echo = FALSE, eval = TRUE))
 opts_chunk$set(tidy = FALSE, comment = NA, highlight = TRUE, prompt = FALSE, crop = TRUE)
 
 # ## Cache
-# opts_chunk$set(cache = TRUE, cache.path = "knitr_output/cache/")
+# opts_chunk$set(cache = TRUE, cache.path = 'knitr_output/cache/')
 
 # ## Plots
-# opts_chunk$set(fig.path = "knitr_output/figures/")
+# opts_chunk$set(fig.path = 'knitr_output/figures/')
 opts_chunk$set(fig.align = 'center', out.width = '80%')
 
 ### Hooks ###
@@ -47,8 +47,8 @@ knit_hooks$set(crop = hook_pdfcrop)
 ## use tinycode = TRUE as chunk option to reduce code font size
 # see http://stackoverflow.com/a/39961605
 knit_hooks$set(tinycode = function(before, options, envir) {
-  if (before) return(paste0("\n \\", options$size, "\n\n"))
-  else return("\n\n \\normalsize \n")
+  if (before) return(paste0('\n \\', options$size, '\n\n'))
+  else return('\n\n \\normalsize \n')
   })
 
 ```
@@ -77,10 +77,10 @@ See https://dataoneorg.github.io/Education/bestpractices/
 
 ## Document your data
 
-https://docs.ropensci.org/dataspice/
+\footnotesize
 
 ```{r echo=TRUE, eval=FALSE}
-library("dataspice")
+library('dataspice')
 create_spice()   # create CSV templates for metadata
 
 edit_creators()  # open Shiny apps to edit the CSVs
@@ -95,15 +95,17 @@ write_spice()  # write machine-readable metadata
 build_site()  # build human-readable metadata report
 ```
 
+https://docs.ropensci.org/dataspice/
+
 
 ## Check data before analysis
 
 ```{r echo=TRUE, eval=FALSE}
-library("assertr")
+library('assertr')
 
 dataset %>% 
   assert(within_bounds(0, 0.20), fruit.weight) %>% 
-  assert(in_set("black", "red"), colour)
+  assert(in_set('black', 'red'), colour)
 ```
 
 Check out also [`pointblank`](https://rich-iannone.github.io/pointblank/index.html)
@@ -111,8 +113,8 @@ Check out also [`pointblank`](https://rich-iannone.github.io/pointblank/index.ht
 
 ## Storage
 
-```{r out.width="50%"}
-include_graphics("images/stolendata.png")
+```{r out.width='50%'}
+include_graphics('images/stolendata.png')
 ```
 
 \scriptsize

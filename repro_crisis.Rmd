@@ -1,12 +1,12 @@
 ---
-title: "Improving the reproducibility of scientific research"
-author: "Francisco Rodríguez-Sánchez"
-date: '@frod_san'
+title: 'Improving the reproducibility of scientific research'
+author: 'Francisco Rodríguez-Sánchez'
+# date: '@frod_san'
 institute: https://frodriguezsanchez.net
 output: 
   binb::metropolis:
     keep_tex: no
-    pandoc_args: ["--lua-filter=hideslide.lua"]
+    pandoc_args: ['--lua-filter=hideslide.lua']
 fontsize: 12pt
 urlcolor: blue
 header-includes:
@@ -15,18 +15,40 @@ header-includes:
 ---
 
 ```{r setup, include=FALSE}
-library("knitr")
-knitr::opts_chunk$set(echo = FALSE, cache = FALSE, background = "red",
+library('knitr')
+knitr::opts_chunk$set(echo = FALSE, cache = FALSE, background = 'red',
                       out.width = '80%',
                       # out.height = '2in', 
                       fig.align = 'center')
 ```
 
+---
+
+
+```{r }
+include_graphics('images/repro-crisis-Nature-2.png')
+```
+
+\raggedright
+\tiny [Baker 2016](https://doi.org/10.1038/533452a)
+\raggedleft
+
+
+## The reproducibility crisis in mass media
+
+```{r out.width='95%'}
+include_graphics('images/elpais.png')
+```
+
+\raggedright
+\tiny [El País](https://elpais.com/elpais/2017/01/10/ciencia/1484073680_523691.html)
+\raggedleft
+
 
 ## Reproducibility Project: Cancer Biology
 
 ```{r }
-include_graphics("images/RPCB_Nature.png")
+include_graphics('images/RPCB_Nature.png')
 ```
 
 > - Goal: Replicate 193 experiments from 53 papers
@@ -48,12 +70,12 @@ include_graphics("images/RPCB_Nature.png")
 
 ---
 
-```{r out.width="65%"}
-include_graphics("images/unclear-methods1.png")
+```{r out.width='65%'}
+include_graphics('images/unclear-methods1.png')
 ```
 
-```{r out.width="50%"}
-include_graphics("images/unclear-methods2.png")
+```{r out.width='50%'}
+include_graphics('images/unclear-methods2.png')
 ```
 
 
@@ -68,11 +90,12 @@ Most scientific articles
 **are NOT reproducible**
 
 
+::: hide :::
 
 ## The reproducibility crisis
 
 ```{r }
-include_graphics("images/repro-crisis-Nature-2.png")
+include_graphics('images/repro-crisis-Nature-2.png')
 ```
 
 \raggedright
@@ -88,18 +111,17 @@ include_graphics("images/repro-crisis-Nature-2.png")
 
 Reproducibility
 
-\Huge
-
-~~CRISIS~~
+*crisis*
 
 **REVOLUTION**
 
 
+# What is reproducibility?
 
 ## Reproducibility vs Replicability 
 
 ```{r out.width = '4in', out.height = '2.2in'}
-include_graphics("images/ReproducibleMatrix.jpg")
+include_graphics('images/ReproducibleMatrix.jpg')
 ```
 
 \raggedright 
@@ -113,11 +135,13 @@ include_graphics("images/ReproducibleMatrix.jpg")
 
 We can't guarantee that
 
-our results are **replicable**.
+our results are **REPLICABLE**.
+
+\vspace{1cm}
 
 But at least 
 
-they should be **reproducible**.
+they should be **REPRODUCIBLE**.
 
 \normalsize
 
@@ -134,18 +158,18 @@ Most scientific articles
 
 ---
 
-```{r out.width="40%", fig.align='left'}
-include_graphics("images/Nuijten.png")
+```{r out.width='40%', fig.align='left'}
+include_graphics('images/Nuijten.png')
 ```
 
 ```{r}
-include_graphics("images/statcheck.png")
+include_graphics('images/statcheck.png')
 ```
 
 ---
 
-```{r out.width="50%", fig.align='left'}
-include_graphics("images/Nuijten.png")
+```{r out.width='50%', fig.align='left'}
+include_graphics('images/Nuijten.png')
 ```
 
 \large
@@ -162,11 +186,10 @@ include_graphics("images/Nuijten.png")
 
 In ecology
 
-\Large
+\Huge
 
-< 20% articles are reproducible
+**< 20%** articles are **reproducible**
 
-\normalsize
 
 \raggedright 
 \footnotesize [Culina et al 2020](https://doi.org/10.1371/journal.pbio.3000763)
@@ -180,8 +203,8 @@ In ecology
 
 Data/Code lost or unusable
 
-```{r out.width="40%"}
-include_graphics("images/datamess.png")
+```{r out.width='40%'}
+include_graphics('images/datamess.png')
 ```
 
 
@@ -210,13 +233,17 @@ What if you need access to a file as it existed 1, 10, 100, or 1000 days ago?
 
 
 
-## What's a reproducible article?
+## What's a reproducible manuscript?
 
-```{r out.width = "60%"}
-include_graphics("images/text-data-code.png")
+```{r out.width = '60%'}
+include_graphics('images/text-data-code.png')
 ```
 
-A scientific article is reproducible if there is **computer code** that can regenerate all results and figures from the **original data**
+DATA + CODE 
+
+- analysis fully **traceable**
+
+- results can be **regenerated**
 
 
 
@@ -236,6 +263,12 @@ The actual scholarship is the **full software environment**,
 \raggedleft
 
 
+## Reproducible article: text + data + code
+
+```{r out.width = '3in', out.height = '1.3in'}
+include_graphics('images/text-data-code.png')
+```
+
 ---
 
 \Huge
@@ -246,7 +279,7 @@ Are we sharing the data?
 ## Are we sharing data?
 
 ```{r}
-include_graphics("images/Roche-2015.png")
+include_graphics('images/Roche-2015.png')
 ```
 
 \raggedright
@@ -256,8 +289,8 @@ include_graphics("images/Roche-2015.png")
 
 ## Are we sharing data? 
 
-```{r out.width="50%"}
-include_graphics("images/Culina-data.png")
+```{r out.width='50%'}
+include_graphics('images/Culina-data.png')
 ```
 
 \raggedright
@@ -270,8 +303,8 @@ include_graphics("images/Culina-data.png")
 \Large 
 Quickly getting better
 
-```{r out.width="40%"}
-include_graphics("images/Campbell-2019.png")
+```{r out.width='40%'}
+include_graphics('images/Campbell-2019.png')
 ```
 
 \raggedright
@@ -288,7 +321,7 @@ Are we sharing the code?
 ## Code exists but rarely shared
 
 ```{r out.width = '2in', out.height = '2.5in'}
-include_graphics("images/antica.png")
+include_graphics('images/antica.png')
 ```
 
 \raggedright
@@ -321,8 +354,8 @@ no son técnicas
 
 ## Poor incentives
 
-```{r out.width="90%"}
-include_graphics("images/incentives.png")
+```{r out.width='90%'}
+include_graphics('images/incentives.png')
 ```
 
 \raggedright
@@ -332,19 +365,19 @@ include_graphics("images/incentives.png")
 
 ## Doing reproducible research can be costly
 
-```{r out.width="70%", fig.align='left'}
-include_graphics("images/Poldrack.png")
+```{r out.width='70%', fig.align='left'}
+include_graphics('images/Poldrack.png')
 ```
 
-```{r out.width="70%"}
-include_graphics("images/Allen-2019.png")
+```{r out.width='70%'}
+include_graphics('images/Allen-2019.png')
 ```
 
 
 ## Must value diverse contributions to reproducible research
 
 ```{r }
-include_graphics("images/credit-Nature.png")
+include_graphics('images/credit-Nature.png')
 ```
 
 \raggedright
@@ -355,7 +388,7 @@ include_graphics("images/credit-Nature.png")
 ## Let's knock down psychological barriers
 
 ```{r out.width = '3in'}
-include_graphics("images/goodenough.png")
+include_graphics('images/goodenough.png')
 ```
 
 \raggedright
@@ -365,6 +398,8 @@ include_graphics("images/goodenough.png")
 \normalsize
 
 - Improve training
+
+- Code review, preprints...
 
 - Avoid shaming -> constructive critique
 

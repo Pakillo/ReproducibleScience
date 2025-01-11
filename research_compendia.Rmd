@@ -1,15 +1,15 @@
 ---
-title: "Research compendia: projects as packages"
-# subtitle: "Research compendia"
-author: "Francisco Rodríguez-Sánchez"
-institute: "https://frodriguezsanchez.net"
-date: "@frod_san"
+title: 'Research compendia: projects as packages'
+# subtitle: 'Research compendia'
+author: 'Francisco Rodríguez-Sánchez'
+institute: 'https://frodriguezsanchez.net'
+# date: '@frod_san'
 aspectratio: 169
 fontsize: 10pt
 output: 
   binb::metropolis:
     keep_tex: no
-    pandoc_args: ["--lua-filter=hideslide.lua"]
+    pandoc_args: ['--lua-filter=hideslide.lua']
 urlcolor: blue
 linkcolor: blue
 header-includes:
@@ -20,7 +20,7 @@ header-includes:
 
 ```{r include=FALSE, cache=FALSE}
 
-library("knitr")
+library('knitr')
 
 ### Chunk options ###
 
@@ -33,10 +33,10 @@ opts_template$set(fig = list(echo = FALSE, eval = TRUE))
 opts_chunk$set(tidy = FALSE, comment = NA, highlight = TRUE, prompt = FALSE, crop = TRUE)
 
 # ## Cache
-# opts_chunk$set(cache = TRUE, cache.path = "knitr_output/cache/")
+# opts_chunk$set(cache = TRUE, cache.path = 'knitr_output/cache/')
 
 # ## Plots
-# opts_chunk$set(fig.path = "knitr_output/figures/")
+# opts_chunk$set(fig.path = 'knitr_output/figures/')
 opts_chunk$set(fig.align = 'center', out.width = '80%')
 
 ### Hooks ###
@@ -47,8 +47,8 @@ knit_hooks$set(crop = hook_pdfcrop)
 ## use tinycode = TRUE as chunk option to reduce code font size
 # see http://stackoverflow.com/a/39961605
 knit_hooks$set(tinycode = function(before, options, envir) {
-  if (before) return(paste0("\n \\", options$size, "\n\n"))
-  else return("\n\n \\normalsize \n")
+  if (before) return(paste0('\n \\', options$size, '\n\n'))
+  else return('\n\n \\normalsize \n')
   })
 
 ```
@@ -77,19 +77,19 @@ knit_hooks$set(tinycode = function(before, options, envir) {
 ## Creating package structure with `template`
 
 :::::::::::::: {.columns align=center totalwidth=8em}
-::: {.column width="70%" align=bottom}
+::: {.column width='70%' align=bottom}
 ```{r }
 library('template')
 ```
 
 ```{r }
-new_project("myproject", 
+new_project('myproject', 
             package = TRUE)
 ```
 :::
-::: {.column width="40%"}
-```{r opts.label = 'fig', out.width="50%"}
-include_graphics("images/template-pkg.png")
+::: {.column width='40%'}
+```{r opts.label = 'fig', out.width='50%'}
+include_graphics('images/template-pkg.png')
 ```
 :::
 ::::::::::::::
@@ -101,15 +101,15 @@ include_graphics("images/template-pkg.png")
 ## `rrtools` creates research compendia
 
 ```{r }
-library("rrtools")
+library('rrtools')
 
-use_compendium("~/myproject/") 
+use_compendium('~/myproject/') 
 ```
 
 Rstudio addin: https://github.com/nevrome/rrtools.addin
 
 ```{r opts.label = 'fig'}
-include_graphics("images/rrtools-addin.png")
+include_graphics('images/rrtools-addin.png')
 ```
 
 
@@ -120,12 +120,12 @@ include_graphics("images/rrtools-addin.png")
 - README
 - LICENSE
 - DESCRIPTION
-- travis.yml
+- renv/
 - Dockerfile
 - analysis/
   |
   |- paper/
-      |- paper.Rmd       
+      |- paper.qmd       
       |- references.bib  
   |
   |- figures/            
@@ -160,7 +160,7 @@ new_compendium()
 Automatic testing with every commit!
 
 ```{r opts.label = 'fig'}
-include_graphics("images/CI.png")
+include_graphics('images/CI.png')
 ```
 
 

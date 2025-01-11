@@ -3,9 +3,9 @@ title: Reproducible Workflows \newline for Better Science and Efficient Collabor
 # subtitle: ""
 author: "Francisco Rodriguez-Sanchez"
 institute: "https://frodriguezsanchez.net"
-date: "@frod_san"
+# date: "@frod_san"
 aspectratio: 43  # 169
-fontsize: 10pt
+fontsize: 11pt
 output: 
   binb::metropolis:
     keep_tex: no
@@ -14,7 +14,7 @@ urlcolor: blue
 linkcolor: blue
 header-includes:
   - \definecolor{shadecolor}{RGB}{230,230,230}
-  # - \setbeamercolor{frametitle}{bg=black}
+  - \setbeamercolor{frametitle}{bg=gray}
 ---
 
 
@@ -56,7 +56,7 @@ knit_hooks$set(tinycode = function(before, options, envir) {
 ```
 
 
-# The Reproducibility ~~Crisis~~ Revolution
+# The Reproducibility Crisis/Revolution
 
 ```{r child="repro_crisis.Rmd"}
 ```
@@ -156,7 +156,6 @@ include_graphics("images/travis.PNG")
 # Reproducible dynamic documents with Rmarkdown
 
 ```{r child="Rmarkdown.Rmd", eval=TRUE}
-# Rmarkdown.Rmd now hosted at independent repo: "Rmarkdown_workshop"
 ```
 
 
@@ -182,6 +181,8 @@ include_graphics("images/travis.PNG")
 - [BES guide to reproducible code](https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf)
 
 - [Turing Way](https://the-turing-way.netlify.app)
+
+- [Building reproducible analytical pipelines with R](https://raps-with-r.dev/)
 
 - [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)
 
@@ -212,9 +213,13 @@ include_graphics("images/repro_gradient.png")
 \LARGE
 Happy collaboration!
 
-\vspace{2cm}
+```{r out.width="50%", echo=F, eval=TRUE}
+knitr::include_graphics("images/happy-collab.jpg")
+```
 
-```{r out.width="20%", echo=F, eval=T}
+\vspace{5mm}
+
+```{r out.width="10%", echo=F, eval=T, fig.align='right'}
 knitr::include_graphics("images/cc-by-nc-sa.png")
 ```
 
