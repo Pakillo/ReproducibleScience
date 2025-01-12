@@ -135,6 +135,17 @@ automagic()
 ```
 
 
+## `groundhog` loads packages as available on given date
+
+https://groundhogr.com/
+
+```{r eval=FALSE, echo=TRUE}
+library('groundhog')
+
+groundhog.library(pkg = c('dplyr', 'ggplot2'), 
+                  date = "2024-09-01")
+```
+
 
 ## `renv`: recommended way to control dependencies
 
