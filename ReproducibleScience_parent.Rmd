@@ -56,6 +56,16 @@ knit_hooks$set(tinycode = function(before, options, envir) {
 ```
 
 
+## Outline
+
+\Large
+
+- WHAT is (computational) reproducibility?
+
+- WHY is it important?
+
+- HOW can we do reproducible research?
+
 # The Reproducibility Crisis/Revolution
 
 ```{r child="repro_crisis.Rmd"}
@@ -178,11 +188,11 @@ include_graphics("images/travis.PNG")
 
 ## How to write more reproducible code
 
+- [Building reproducible analytical pipelines with R](https://raps-with-r.dev/)
+
 - [BES guide to reproducible code](https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf)
 
 - [Turing Way](https://the-turing-way.netlify.app)
-
-- [Building reproducible analytical pipelines with R](https://raps-with-r.dev/)
 
 - [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)
 

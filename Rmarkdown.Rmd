@@ -88,13 +88,12 @@ include_graphics('images/workflow.png')
 
 ## Problems of a broken workflow
 
-\Large
+- **How did you do this?** What analysis is behind this figure? Did you account for ...?
 
-> -   How did you do this? What analysis is behind this figure? Did you account for ...?
+- **What dataset was used?** Which individuals were left out? Where is the clean dataset?
 
-> -   What dataset was used? Which individuals were left out? Where is the clean dataset?
+- Oops, there is an error in the data. **Can you repeat the analysis?** And update figures/tables in Word!
 
-> -   Oops, there is an error in the data. Can you repeat the analysis? And update figures/tables in Word!
 
 ## Manual copy-paste is tedious & problematic
 
@@ -214,6 +213,8 @@ mydata <- read.csv('data.txt')
 
 \vspace{1cm}
 
+\hrulefill
+
 > Much better than copy-paste!
 
 ## Rmarkdown: code (R, Python, etc) + text (Markdown)
@@ -224,7 +225,7 @@ include_graphics('images/Rmd-exp-eng.png')
 
 ## Code chunk options
 
-    ```{r echo=FALSE, eval=TRUE, cache=TRUE, fig.height=3} `r ''`
+    ```{r echo=FALSE, eval=TRUE, fig.height=3} `r ''`
     plot(iris)
     ```
 
@@ -460,8 +461,6 @@ include_graphics('images/rstudio_templates.png')
 
 <https://github.com/ropenscilabs/gramr>
 
-## Spell and grammar checking
-
 <https://github.com/nevrome/wellspell.addin>
 
 ## Find synonyms
@@ -605,7 +604,9 @@ include_graphics('images/quarto_ms.png')
 
 <https://m.canouil.dev/quarto-extensions/>
 
-Journal templates: <https://quarto.org/docs/extensions/listing-journals.html>
+Journal templates: 
+
+<https://quarto.org/docs/extensions/listing-journals.html>
 
 # Your turn
 
@@ -613,10 +614,12 @@ Journal templates: <https://quarto.org/docs/extensions/listing-journals.html>
 
 \Large
 
--   Try visual markdown editor
+- Try visual markdown editor
 
--   Add bibliography
+- Add bibliography
 
--   Try templates (rticles, rmdTemplates)
+- Try templates (rticles, rmdTemplates)
 
--   Parameterised reports (e.g. different iris or penguin species)
+- Parameterised reports (e.g. different iris or penguin species)
+
+- Quarto manuscript

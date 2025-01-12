@@ -107,13 +107,11 @@ include_graphics('images/repro-crisis-Nature-2.png')
 
 ---
 
-\Large
+\LARGE
 
 Reproducibility
 
-*crisis*
-
-**REVOLUTION**
+*crisis* ---> **REVOLUTION**
 
 
 # What is reproducibility?

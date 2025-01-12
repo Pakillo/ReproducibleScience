@@ -42,7 +42,7 @@ include_graphics('images/repro_gradient.png')
 
 - **MANUSCRIPT** (Text + Tables + Figures)
 
-- **DATA** in permanent archive (see [Tierney & Ram 2020](https://arxiv.org/abs/2002.11626))
+- **DATA** in permanent archive (see [Tierney & Ram 2021](https://doi.org/10.1016/j.patter.2021.100368))
 
 - **CODE** in permanent archive (see [Eglen et al 2016](https://doi.org/10.1038/nn.4550))
 
@@ -61,7 +61,7 @@ include_graphics('images/repro_gradient.png')
 
 ## How to share data
 
-- **Open** format (csv, txt)
+- **Open** format (csv, txt...)
 
 - **README** (who, what, when, where, why, how)
 
@@ -74,7 +74,7 @@ include_graphics('images/repro_gradient.png')
 - **Metadata** standardised (JSON, XML)
 
 \raggedright
-\tiny [Tierney & Ram 2020](https://arxiv.org/abs/2002.11626)
+\tiny [Tierney & Ram 2021](https://doi.org/10.1016/j.patter.2021.100368)
 \raggedleft
 
 
@@ -136,7 +136,7 @@ sessionInfo()
 renv::snapshot()
 ```
 
-creates `renv.lock`file recording dependencies. 
+creates `renv.lock` file recording dependencies. 
 
 Can use `renv::restore()` to restore packages later or in different computer.
 

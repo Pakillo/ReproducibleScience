@@ -65,7 +65,9 @@ include_graphics('images/sotobosque.png')
 
 \Large
 
-Package changes can break your analysis
+Updating R packages broke your script?
+
+Need to run an old script from you, or someone else?
 
 How to reproduce your analysis in a year, \newline or different computer?
 
@@ -79,25 +81,28 @@ sessionInfo()
 ```
 
 
+## `checkpoint` recreates R packages in given date
 
-
-## `checkpoint` reconstructs packages in given date
+\footnotesize
 
 ```{r }
 library('checkpoint')
 
 options(checkpoint.mranUrl="https://packagemanager.posit.co/")
 
-checkpoint('2019-10-08')
+checkpoint('2024-10-08')
 
 source('analysis.R')
 ```
+
+\normalsize
 
 1. Detects packages used
 
 2. Installs version from given date (only CRAN)
 
 3. Independent install (not messing w/ main library)
+
 
 
 ## `automagic` records & install packages (CRAN + GitHub)
@@ -122,16 +127,16 @@ File `deps.yaml` records dependencies:
   GithubSHA1: c48a4bb0a40df7116bc502aa3ce2cbbc9d70b7e2
 ```
 \scriptsize
+
 To install all those dependencies:
+
 ```{r eval=FALSE, echo=TRUE}
 automagic()
 ```
 
 
 
-
-
-## `renv`: recommended to control dependencies
+## `renv`: recommended way to control dependencies
 
 ```{r }
 renv::init()  
@@ -169,7 +174,14 @@ we also need to control
 
 from a `Dockerfile` 
 
-\normalsize
+
+## `rang` recreates environment (pkgs + external software)
+
+https://gesistsa.github.io/rang/
+
+```{r opts.label='fig', out.width='90%'}
+include_graphics('images/rang.png')
+```
 
 
 
@@ -193,7 +205,7 @@ dockfile <- dockerfile(from = 'mypaper.Rmd')
 \footnotesize https://o2r.info/containerit
 
 
-## `tugboat` created Dockerfile w/ entire software environment
+## `tugboat` creates Dockerfile w/ entire software environment
 
 ```{r opts.label = 'fig'}
 include_graphics('images/tugboat.png')
@@ -219,6 +231,31 @@ include_graphics('images/holepunch.png')
 \footnotesize https://karthik.github.io/holepunch/
 
 :::
+
+
+## `rix`: reproducible environments with Nix
+
+https://docs.ropensci.org/rix/
+
+```{r opts.label = 'fig'}
+include_graphics('images/rix.png')
+```
+
+
+## Remember to cite software used!
+
+https://pakillo.github.io/grateful/
+
+```{r}
+library('grateful')
+cite_packages()
+```
+
+```{r opts.label = 'fig'}
+include_graphics('images/grateful.png')
+```
+
+
 
 # Your turn
 

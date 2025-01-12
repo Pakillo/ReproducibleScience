@@ -68,7 +68,7 @@ include_graphics('images/gatherdata.png')
 ```
 
 \scriptsize
-http://r4ds.had.co.nz/tidy.html
+https://r4ds.hadley.nz/data-tidy.html
 \normalsize
 
 
@@ -123,7 +123,6 @@ include_graphics('images/tabular_data.png')
 
 > - Broman & Woo: [Data organization in spreadsheets](https://doi.org/10.1080/00031305.2017.1375989)
 
-\normalsize
 
 
 # Common spreadsheet errors
@@ -154,9 +153,6 @@ Source: Data Carpentry
 ```{r out.width='4in'}
 include_graphics('images/DC_datasheet_example.jpg')
 ```
-
-
-## Multiple tabs
 
 Could you avoid new tab by adding a column to original spreadsheet?
 

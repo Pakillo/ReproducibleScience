@@ -103,8 +103,8 @@ https://docs.ropensci.org/dataspice/
 ```{r echo=TRUE, eval=FALSE}
 library('assertr')
 
-dataset %>% 
-  assert(within_bounds(0, 0.20), fruit.weight) %>% 
+dataset |>  
+  assert(within_bounds(0, 0.20), fruit.weight) |>  
   assert(in_set('black', 'red'), colour)
 ```
 

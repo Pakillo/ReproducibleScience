@@ -280,6 +280,10 @@ How does sibling competition affect nestling growth in blue tits?
 include_graphics('images/Gould.png')
 ```
 
+\raggedright
+\tiny [Gould et al 2023](https://doi.org/10.32942/X2GG62)
+\raggedleft
+
 
 
 

@@ -280,13 +280,13 @@ source("make_figures.R")
 ## Don't Repeat Yourself (DRY)
 
 ```{r echo=TRUE, eval=FALSE}
-dataset %>% 
-  filter(species == "Laurus nobilis") %>% 
+dataset |> 
+  filter(species == "Laurus nobilis") |> 
   ggplot() +
   geom_point(aes(x, y))
 
-dataset %>% 
-  filter(species == "Laurus azorica") %>% 
+dataset |> 
+  filter(species == "Laurus azorica") |> 
   ggplot() +
   geom_point(aes(x, y))
 ```
@@ -298,8 +298,8 @@ dataset %>%
 
 ```{r echo=TRUE, eval=FALSE}
 plot_species <- function(sp, data) {
-  data %>% 
-    filter(species == sp) %>% 
+  data |> 
+    filter(species == sp) |> 
     ggplot() +
     geom_point(aes(x, y))
 }
